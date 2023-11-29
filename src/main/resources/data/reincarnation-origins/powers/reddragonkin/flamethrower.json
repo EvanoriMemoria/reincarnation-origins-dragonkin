@@ -76,13 +76,27 @@
       "should_render": true
     }
   },
-  "fuelregen": {
+  "fuel_regen": {
     "_comment": "Regenerate Fuel Once Every five Seconds",
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_fuelbar",
       "change": 1
+    },
+    "interval": 100
+  },
+  "fuel_regen_conditional": {
+    "_comment": "Regenerate an additional fuel Every five Seconds, after completing the breath advancement",
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:advancement",
+      "advancement": "reincarnation-origins:reddragonkin/breath"
     },
     "interval": 100
   }
