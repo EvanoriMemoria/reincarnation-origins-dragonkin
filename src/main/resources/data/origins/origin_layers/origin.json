@@ -1,6 +1,10 @@
 {
     "replace": false,
     "origins": [
-        "reincarnation-origins:reddragonkin"
+        "reincarnation-origins:dragonkin",
+        "reincarnation-origins:red-dragon",
+        "reincarnation-origins:blue-dragon",
+        "reincarnation-origins:brown-dragon",
+        "reincarnation-origins:white-dragon"
     ]
 }

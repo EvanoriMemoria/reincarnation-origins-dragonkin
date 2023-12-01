@@ -1,0 +1,153 @@
+{
+  "type": "origins:multiple",
+  "flamethrower": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:raycast",
+      "distance": 12,
+      "block": true,
+      "shape_type": "collider",
+      "fluid_handling": "source_only",
+      "block_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+          {
+            "block_condition": {
+              "type": "origins:block",
+              "block": "minecraft:water"
+            },
+            "block_action": {
+              "type": "origins:execute_command",
+              "command": "fill ~ ~ ~ ~ ~ ~ minecraft:water replace minecraft:ice"
+            }
+          },
+          {
+            "block_condition": {
+              "type": "origins:block",
+              "block": "minecraft:lava"
+            },
+            "block_action": {
+              "type": "origins:execute_command",
+              "command": "fill ~ ~ ~ ~ ~ ~ minecraft:lava replace minecraft:obsidian"
+            }
+          }
+        ]
+      },
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 10,
+              "amplifier": 1
+            }
+          },
+          {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:instant_health",
+              "duration": 1,
+              "amplifier": 1
+            }
+          }
+        ]
+      },
+      "before_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:exhaust",
+            "amount": 0.1
+          },
+          {
+            "type": "origins:change_resource",
+            "resource": "*:*_fuelbar",
+            "change": -1
+          }
+        ]
+      },
+      "command_along_ray": "particle minecraft:splash ~ ~ ~ 0.5 0.5 0.5 0 500"
+    },
+    "cooldown": 5,
+    "hud_render": {
+      "should_render": false
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_fuelbar",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    }
+  },
+  "fuelbar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 12,
+    "min_action": {
+      "type": "origins:execute_command",
+      "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
+    },
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/resource_bar.png",
+      "bar_index": 7,
+      "should_render": true
+    }
+  },
+  "fuel_regen": {
+    "_comment": "Regenerate Fuel Once Every five Seconds while not on fire",
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:on_fire",
+      "inverted": true
+    },
+    "interval": 100
+  },
+  "fuel_regen_conditional": {
+    "_comment": "Regenerate an additional fuel Every five Seconds, while in water or rain",
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    },
+    "interval": 100
+  },
+  "fuel_degen": {
+    "_comment": "Rapidly lose fuel while on fire",
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": -1
+    },
+    "interval": 40,
+    "condition": {
+      "type": "origins:on_fire"
+    }
+  }
+}

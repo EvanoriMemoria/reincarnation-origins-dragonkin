@@ -1,9 +1,9 @@
 {
     "schemaVersion": 1,
-    "id": "reincarnation-origins-red-dragonkin",
+    "id": "reincarnation-origins-dragonkin",
     "version": "1.0.0",
-    "name": "Reincarnation Origins: Red Dragonkn",
-    "description": "Adds the Red Dragonkin origin!",
+    "name": "Reincarnation Origins: Elemental Dragonkin",
+    "description": "Adds the Elemental Dragonkin origin!",
     "authors": [
         "fergenbergel"
     ],

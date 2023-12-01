@@ -1,0 +1,29 @@
+{
+  "type": "origins:multiple",
+  "fast-swim-water": {
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": 0.50
+    },
+    "condition": {
+      "type": "origins:fluid_height",
+      "fluid": "minecraft:water",
+      "comparison": ">",
+      "compare_to": 0.0
+    }
+  },
+  "fast-swim-lava": {
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": 0.25
+    },
+    "condition": {
+      "type": "origins:fluid_height",
+      "fluid": "minecraft:lava",
+      "comparison": ">",
+      "compare_to": 0.0
+    }
+  }
+}

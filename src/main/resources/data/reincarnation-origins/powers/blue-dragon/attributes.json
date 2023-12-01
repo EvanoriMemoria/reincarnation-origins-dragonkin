@@ -1,0 +1,68 @@
+{
+  "type": "origins:multiple",
+  "attributes": {
+    "type": "origins:conditioned_attribute",
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.armor_toughness",
+        "value": 4,
+        "operation": "addition"
+      },
+      {
+        "attribute": "minecraft:generic.armor",
+        "value": 6,
+        "operation": "addition"
+      },
+      {
+        "attribute": "minecraft:generic.knockback_resistance",
+        "value": 1,
+        "operation": "addition"
+      },
+      {
+        "attribute": "minecraft:generic.max_health",
+        "value": 4,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  },
+  "slow_on_land": {
+    "type": "origins:conditioned_attribute",
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.movement_speed",
+        "value": -0.10,
+        "operation": "addition"
+      }
+    ],
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0,
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        }
+      ]
+    }
+  }
+}

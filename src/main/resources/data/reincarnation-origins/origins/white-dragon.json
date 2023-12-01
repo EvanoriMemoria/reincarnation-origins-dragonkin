@@ -1,0 +1,11 @@
+{
+	"powers":[
+    "reincarnation-origins:white-dragon/cyclone",
+    "reincarnation-origins:white-dragon/float"
+	],
+	"icon":"minecraft:dead_brain_coral",
+	"impact":3,
+	"name": "White Dragon",
+	"description": "A descendant of the White Dragons. You have an affinity for Air.",
+  "unchoosable":true
+}

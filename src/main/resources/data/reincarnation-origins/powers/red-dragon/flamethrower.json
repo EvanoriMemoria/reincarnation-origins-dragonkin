@@ -1,7 +1,5 @@
 {
   "type": "origins:multiple",
-  "name": "Flamethrower",
-  "description": "Shoot fire if you have fuel.",
   "flamethrower": {
     "type": "origins:active_self",
     "entity_action": {
@@ -9,11 +7,11 @@
       "distance": 12,
       "block": true,
       "shape_type": "collider",
-      "fluid_handling": "none",
-			"block_action": {
-				"type": "origins:execute_command",
-				"command": "fill ~-1 ~ ~ ~1 ~1 ~ minecraft:fire replace minecraft:air"
-			},
+      "fluid_handling": "any",
+      "block_action": {
+        "type": "origins:execute_command",
+        "command": "fill ~-1 ~ ~ ~1 ~1 ~ minecraft:fire replace minecraft:air"
+      },
       "bientity_action": {
         "type": "origins:and",
         "actions": [
@@ -70,6 +68,10 @@
     "type": "origins:resource",
     "min": 0,
     "max": 6,
+    "min_action": {
+      "type": "origins:execute_command",
+      "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
+    },
     "hud_render": {
       "sprite_location": "origins:textures/gui/resource_bar.png",
       "bar_index": 7,
@@ -77,12 +79,28 @@
     }
   },
   "fuel_regen": {
-    "_comment": "Regenerate Fuel Once Every five Seconds",
+    "_comment": "Regenerate Fuel Once Every five Seconds while not touching water",
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_fuelbar",
       "change": 1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0,
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        }
+      ]
     },
     "interval": 100
   },
@@ -95,9 +113,49 @@
       "change": 1
     },
     "condition": {
-      "type": "origins:advancement",
-      "advancement": "reincarnation-origins:reddragonkin/breath"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:advancement",
+          "advancement": "reincarnation-origins:reddragonkin/breath"
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0,
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        }
+      ]
     },
     "interval": 100
+  },
+  "fuel_degen": {
+    "_comment": "Rapidly lose fuel while touching rain or water",
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": -1
+    },
+    "interval": 40,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
   }
 }

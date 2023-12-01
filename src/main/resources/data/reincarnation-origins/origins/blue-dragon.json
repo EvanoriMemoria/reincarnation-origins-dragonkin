@@ -1,0 +1,14 @@
+{
+	"powers":[
+    "reincarnation-origins:blue-dragon/attributes",
+    "reincarnation-origins:blue-dragon/healing_torrent",
+    "reincarnation-origins:blue-dragon/swimming",
+    "reincarnation-origins:blue-dragon/water_breathing",
+    "origins:water_vision"
+	],
+	"icon":"minecraft:tube_coral",
+	"impact":3,
+	"name": "Blue Dragon",
+	"description": "A descendant of the Blue Dragons. You have an affinity for water.",
+  "unchoosable":true
+}

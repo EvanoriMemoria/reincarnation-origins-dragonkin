@@ -1,0 +1,12 @@
+{
+	"powers":[
+    "reincarnation-origins:brown-dragon/sink_in_water",
+    "reincarnation-origins:brown-dragon/swim",
+		"reincarnation-origins:brown-dragon/ground_pound"
+	],
+	"icon":"minecraft:dead_tube_coral",
+	"impact":3,
+	"name": "Brown Dragon",
+	"description": "A descendant of the Brown Dragons. You have an affinity for fire.",
+  "unchoosable":true
+}

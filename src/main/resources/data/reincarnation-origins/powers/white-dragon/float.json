@@ -1,0 +1,44 @@
+{
+  "type": "origins:multiple",
+  "hidden": true,
+  "sink": {
+    "type": "origins:ignore_water"
+  },
+  "drift": {
+    "type": "origins:modify_air_speed",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": 1.75
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_hover"
+    }
+  },
+  "hover": {
+    "type": "origins:modify_falling",
+    "velocity": 0.0,
+    "take_fall_damage": false,
+    "condition": {
+      "type": "origins:in_block_anywhere",
+      "comparison": ">",
+      "compare_to": 0.1,
+      "block_condition": {
+        "type": "origins:block",
+        "block": "minecraft:water"
+      }
+    }
+  },
+  "float": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "y": 0.033
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_hover"
+    }
+  }
+}

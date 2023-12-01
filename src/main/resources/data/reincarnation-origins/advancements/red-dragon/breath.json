@@ -1,11 +1,11 @@
 {
 	"display":{
 		"title":{
-			"translate":"reincarnation-origins.advancements.reddragonkin.breath.name",
+			"translate":"reincarnation-origins.advancements.red-dragon.breath.name",
 			"color":"gold"
 		},
 		"description":{
-			"translate":"reincarnation-origins.advancements.reddragonkin.breath.description"
+			"translate":"reincarnation-origins.advancements.red-dragon.breath.description"
 		},
 		"icon":{
 			"item":"minecraft:magma_block"
@@ -18,5 +18,5 @@
 			"trigger":"minecraft:impossible"
 		}
 	},
-	"parent":"reincarnation-origins:reddragonkin/root"
+	"parent":"reincarnation-origins:dragonkin/root"
 }

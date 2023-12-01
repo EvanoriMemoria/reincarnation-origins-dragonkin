@@ -1,0 +1,22 @@
+{
+	"display":{
+		"title":{
+			"translate":"reincarnation-origins.advancements.dragonkin.red-dragon.name",
+			"color":"orange"
+		},
+		"description":{
+			"translate":"reincarnation-origins.advancements.dragonkin.red-dragon.description"
+		},
+		"icon":{
+			"item":"minecraft:dragon_egg"
+		},
+		"announce_to_chat":false,
+		"background":"minecraft:textures/gui/advancements/backgrounds/stone.png"
+	},
+	"criteria":{
+		"a":{
+			"trigger":"minecraft:impossible"
+		}
+	},
+	"parent":"reincarnation-origins:dragonkin/root"
+}

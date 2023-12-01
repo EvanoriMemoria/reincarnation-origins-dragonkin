@@ -1,0 +1,90 @@
+{
+  "hidden": "true",
+  "type": "origins:multiple",
+  "bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 100,
+    "max_action": {
+      "type": "origins:execute_command",
+      "command": "function reincarnation-origins:dragonkin/transform_blue"
+    },
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 15
+    }
+  },
+  "recharge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_bar",
+      "change": 5
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    },
+    "interval": 20
+  },
+  "fire_decharge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_bar",
+      "change": -10
+    },
+    "condition": {
+      "type": "origins:on_fire"
+    },
+    "interval": 10
+  },
+  "decharge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:delay",
+      "ticks": 60,
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_bar",
+        "change": -5
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0,
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        }
+      ]
+    },
+    "interval": 10
+  },
+  "respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "resource": "*:*_bar",
+      "operation": "set",
+      "change": 0
+    }
+  }
+}
