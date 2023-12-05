@@ -13,58 +13,61 @@
       "type": "origins:area_of_effect",
       "radius": 8,
       "bientity_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:add_velocity",
-            "client": true,
-            "z": 1.6,
-            "y": 0.6
-          },
-          {
-            "type": "apply_effects",
-            "effects": {
-              "effect": "minecraft:slowness",
-              "amplifier": 9,
-              "duration": 100,
-              "is_ambient": true,
-              "show_particles": false,
-              "show_icon": true
-            }
-          },
-          {
-            "type": "origins:damage",
-            "amount": 10,
-            "damage_type": "minecraft:in_wall"
-          },
-          {
-            "type": "origins:spawn_particles",
-            "particle": {
-              "type": "minecraft:poof",
-              "params": "0.922 0.314 0.314 2"
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:add_velocity",
+              "client": true,
+              "z": 1.6,
+              "y": 0.6
             },
-            "count": 4,
-            "speed": 0.0,
-            "force": true,
-            "spread": {
-              "x": 1.0,
-              "y": 0.0,
-              "z": 1.0
-            }
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "power grant @s reincarnation-origins:support/petrify_color"
-          },
-          {
-            "type": "origins:delay",
-            "ticks": 100,
-            "action": {
+            {
+              "type": "origins:apply_effect",
+              "effects": {
+                "effect": "minecraft:slowness",
+                "amplifier": 9,
+                "duration": 100,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+              }
+            },
+            {
+              "type": "origins:damage",
+              "amount": 10,
+              "damage_type": "minecraft:in_wall"
+            },
+            {
+              "type": "origins:spawn_particles",
+              "particle": {
+                "type": "minecraft:poof",
+                "params": "0.922 0.314 0.314 2"
+              },
+              "count": 4,
+              "speed": 0.0,
+              "force": true,
+              "spread": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": 1.0
+              }
+            },
+            {
               "type": "origins:execute_command",
-              "command": "power revoke @s reincarnation-origins:support/petrify_color"
+              "command": "power grant @s reincarnation-origins:support/petrify_color"
+            },
+            {
+              "type": "origins:delay",
+              "ticks": 100,
+              "action": {
+                "type": "origins:execute_command",
+                "command": "power revoke @s reincarnation-origins:support/petrify_color"
+              }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "before_action": {
