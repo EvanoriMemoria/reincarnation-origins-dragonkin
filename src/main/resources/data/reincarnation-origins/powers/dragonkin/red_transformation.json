@@ -35,11 +35,11 @@
         "type": "origins:change_resource",
         "resource": "*:*_bar",
         "change": -5
-      },
-      "condition": {
-        "type": "origins:on_fire",
-        "inverted": true
       }
+    },
+    "condition": {
+      "type": "origins:on_fire",
+      "inverted": true
     },
     "interval": 20
   },
