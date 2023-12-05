@@ -4,7 +4,7 @@
     "type": "origins:modify_swim_speed",
     "modifier": {
       "operation": "multiply_base",
-      "value": 0.50
+      "value": 2.00
     },
     "condition": {
       "type": "origins:fluid_height",
@@ -17,7 +17,7 @@
     "type": "origins:modify_swim_speed",
     "modifier": {
       "operation": "multiply_base",
-      "value": 0.25
+      "value": 1.00
     },
     "condition": {
       "type": "origins:fluid_height",

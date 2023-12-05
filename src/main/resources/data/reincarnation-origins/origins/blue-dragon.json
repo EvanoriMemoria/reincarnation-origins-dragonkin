@@ -1,7 +1,8 @@
 {
 	"powers":[
     "reincarnation-origins:blue-dragon/attributes",
-    "reincarnation-origins:blue-dragon/healing_torrent",
+    "reincarnation-origins:blue-dragon/healing_splash",
+    "reincarnation-origins:blue-dragon/leap",
     "reincarnation-origins:blue-dragon/swimming",
     "reincarnation-origins:blue-dragon/water_breathing",
     "reincarnation-origins:blue-dragon/water_vision"

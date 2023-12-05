@@ -1,27 +1,27 @@
 {
-	"type":"origins:active_self",
-    "key": "key.origins.secondary_active",
-	"cooldown":200,
-    "hud_render":{
-		"bar_index":1
-	},
-	"entity_action":{
-		"type":"origins:add_velocity",
-		"z":2,
-		"space":"local"
-	},
-	"condition":{
-		"type":"origins:or",
-		"conditions":[
-			{
-				"type":"origins:fluid_height",
-				"fluid":"minecraft:water",
-				"comparison":">",
-				"compare_to":0
-			},
-			{
-				"type":"origins:in_rain"
-			}
-		]
-	}
+  "type": "origins:active_self",
+  "key": "key.origins.secondary_active",
+  "cooldown": 200,
+  "hud_render": {
+    "bar_index": 1
+  },
+  "entity_action": {
+    "type": "origins:add_velocity",
+    "z": 2,
+    "space": "local"
+  },
+  "condition": {
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      {
+        "type": "origins:in_rain"
+      }
+    ]
+  }
 }

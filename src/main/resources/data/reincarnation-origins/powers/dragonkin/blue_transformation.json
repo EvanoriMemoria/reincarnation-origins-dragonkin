@@ -47,7 +47,7 @@
     },
     "interval": 10
   },
-  "decharge": {
+  "no_water_decharge": {
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:delay",
