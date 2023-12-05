@@ -32,6 +32,10 @@
           "type": "origins:submerged_in",
           "fluid": "water",
           "inverted": true
+        },
+        {
+          "type": "origins:on_fire",
+          "inverted": true
         }
       ]
     },
@@ -46,11 +50,11 @@
         "type": "origins:change_resource",
         "resource": "*:*_bar",
         "change": -5
-      },
-      "condition": {
-        "type": "origins:exposed_to_sky",
-        "inverted": true
       }
+    },
+    "condition": {
+      "type": "origins:exposed_to_sky",
+      "inverted": true
     },
     "interval": 20
   },
@@ -65,13 +69,11 @@
       "type": "origins:or",
       "conditions": [
         {
-          "type": "origins:fluid_height",
-          "fluid": "minecraft:water",
-          "comparison": ">",
-          "compare_to": 0.0
+          "type": "origins:submerged_in",
+          "fluid": "water"
         },
         {
-          "type": "origins:in_rain"
+          "type": "origins:on_fire"
         }
       ]
     },
