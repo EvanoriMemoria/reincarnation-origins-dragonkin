@@ -1,0 +1,1 @@
+kill @e[tag=carn.cyclone,distance=..30]
