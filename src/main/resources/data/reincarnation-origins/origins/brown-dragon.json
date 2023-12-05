@@ -1,8 +1,10 @@
 {
   "powers": [
+    "reincarnation-origins:brown-dragon/ground_pound",
     "reincarnation-origins:brown-dragon/sink_in_water",
+    "reincarnation-origins:brown-dragon/slow_flier",
     "reincarnation-origins:brown-dragon/swim",
-    "reincarnation-origins:brown-dragon/ground_pound"
+    "reincarnation-origins:brown-dragon/wings"
   ],
   "icon": "minecraft:dead_tube_coral",
   "impact": 3,

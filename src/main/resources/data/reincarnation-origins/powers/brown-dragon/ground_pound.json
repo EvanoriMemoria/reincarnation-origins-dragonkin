@@ -13,82 +13,90 @@
       "type": "origins:area_of_effect",
       "radius": 8,
       "bientity_action": {
-        "type": "origins:target_action",
-        "action": {
-          "type": "origins:and",
-          "actions": [
-            {
-              "type": "origins:add_velocity",
-              "client": true,
-              "z": 1.6,
-              "y": 0.6
-            },
-            {
-              "type": "origins:apply_effect",
-              "effects": {
-                "effect": "minecraft:slowness",
-                "amplifier": 9,
-                "duration": 100,
-                "is_ambient": true,
-                "show_particles": false,
-                "show_icon": true
-              }
-            },
-            {
-              "type": "origins:damage",
-              "amount": 10,
-              "damage_type": "minecraft:in_wall"
-            },
-            {
-              "type": "origins:spawn_particles",
-              "particle": {
-                "type": "minecraft:poof",
-                "params": "0.922 0.314 0.314 2"
-              },
-              "count": 4,
-              "speed": 0.0,
-              "force": true,
-              "spread": {
-                "x": 1.0,
-                "y": 0.0,
-                "z": 1.0
-              }
-            },
-            {
-              "type": "origins:execute_command",
-              "command": "power grant @s reincarnation-origins:support/petrify_color"
-            },
-            {
-              "type": "origins:delay",
-              "ticks": 100,
-              "action": {
-                "type": "origins:execute_command",
-                "command": "power revoke @s reincarnation-origins:support/petrify_color"
-              }
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:add_velocity",
+                  "client": true,
+                  "z": 1.6,
+                  "y": 0.6
+                },
+                {
+                  "type": "origins:apply_effect",
+                  "effects": {
+                    "effect": "minecraft:slowness",
+                    "amplifier": 9,
+                    "duration": 100,
+                    "is_ambient": true,
+                    "show_particles": false,
+                    "show_icon": true
+                  }
+                },
+                {
+                  "type": "origins:damage",
+                  "amount": 6,
+                  "damage_type": "minecraft:in_wall"
+                },
+                {
+                  "type": "origins:spawn_particles",
+                  "particle": {
+                    "type": "minecraft:poof",
+                    "params": "0.922 0.314 0.314 2"
+                  },
+                  "count": 4,
+                  "speed": 0.0,
+                  "force": true,
+                  "spread": {
+                    "x": 1.0,
+                    "y": 0.0,
+                    "z": 1.0
+                  }
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "power grant @s reincarnation-origins:dragon-support/petrify_color"
+                },
+                {
+                  "type": "origins:delay",
+                  "ticks": 100,
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "power revoke @s reincarnation-origins:dragon-support/petrify_color"
+                  }
+                }
+              ]
             }
-          ]
-        }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:exhaust",
+                  "amount": 0.1
+                },
+                {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_fuelbar",
+                  "change": -6
+                }
+              ]
+            }
+          }
+        ]
       }
-    },
-    "before_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:exhaust",
-          "amount": 0.1
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_fuelbar",
-          "change": -1
-        }
-      ]
     }
   },
   "fuelbar": {
     "type": "origins:resource",
     "min": 0,
-    "max": 6,
+    "max": 32,
     "min_action": {
       "type": "origins:execute_command",
       "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
@@ -98,8 +106,8 @@
       "bar_index": 20
     }
   },
-  "fuel_regen": {
-    "_comment": "Regenerate Fuel Once Every twenty Seconds while not under the sky",
+  "fuel_regen_no_sky": {
+    "_comment": "Regenerate Fuel Once Every Five Seconds while not under the sky",
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
@@ -110,10 +118,10 @@
       "type": "origins:exposed_to_sky",
       "inverted": true
     },
-    "interval": 400
+    "interval": 100
   },
-  "fuel_regen_conditional": {
-    "_comment": "Regenerate an additional fuel Every five Seconds, while near enough natural stone",
+  "fuel_regen_stone": {
+    "_comment": "Regenerate an additional fuel every second, while near enough natural stone",
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
@@ -131,17 +139,21 @@
       "comparison": ">=",
       "compare_to": 5
     },
-    "interval": 100
+    "interval": 20
   },
   "fuel_degen": {
     "_comment": "Lose fuel while under the sky",
     "type": "origins:action_over_time",
     "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_fuelbar",
-      "change": -1
+      "type": "origins:delay",
+      "ticks": 60,
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_fuelbar",
+        "change": -1
+      }
     },
-    "interval": 200,
+    "interval": 10,
     "condition": {
       "type": "origins:exposed_to_sky"
     }
