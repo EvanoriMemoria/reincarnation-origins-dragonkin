@@ -14,10 +14,10 @@
   },
   "entity_action_removed": {
     "type": "origins:execute_command",
-    "command": "function reincarnation-origins:red-dragon/remove_wings"
+    "command": "function reincarnation-origins:dragonkin/remove_wings"
   },
   "entity_action_lost": {
     "type": "origins:execute_command",
-    "command": "function reincarnation-origins:red-dragon/remove_wings"
+    "command": "function reincarnation-origins:dragonkin/remove_wings"
   }
 }

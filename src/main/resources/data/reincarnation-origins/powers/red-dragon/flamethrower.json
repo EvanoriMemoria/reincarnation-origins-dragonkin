@@ -46,7 +46,7 @@
           }
         ]
       },
-      "command_along_ray": "particle minecraft:flame ~ ~ ~ .01 .01 .01 0 2 force",
+      "command_along_ray": "particle minecraft:lava_particle ~ ~-0.15 ~ .01 .01 .01 0 2 force",
       "command_step": 0.33
     },
     "cooldown": 5,

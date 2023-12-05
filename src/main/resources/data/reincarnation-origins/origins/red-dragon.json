@@ -1,10 +1,11 @@
 {
 	"powers":[
     "reincarnation-origins:red-dragon/flamethrower",
-    "reincarnation-origins:red-dragon/wings",
+    "reincarnation-origins:red-dragon/master_of_lava",
+    "reincarnation-origins:red-dragon/slow_flier",
     "reincarnation-origins:red-dragon/slow_swimmer",
     "reincarnation-origins:red-dragon/water_vulnerability",
-    "reincarnation-origins:red-dragon/master_of_lava"
+    "reincarnation-origins:red-dragon/wings"
 	],
 	"icon":"minecraft:fire_coral",
 	"impact":3,
