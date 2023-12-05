@@ -1,0 +1,1 @@
+trinkets set chest cape 0 icarus:white_dragon_wings{display:{Name:'{"text":"White Dragon\'s Wings","italic":false}',Lore:['{"text":"Sleek and powerful wings made for extreme air speed and manueverability."}']},Enchantments:[{id:"minecraft:binding_curse",lvl:1s},{id:"minecraft:vanishing_curse",lvl:1s}]}

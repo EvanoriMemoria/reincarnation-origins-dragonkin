@@ -1,0 +1,1 @@
+trinkets set chest cape 0 icarus:blue_dragon_wings{display:{Name:'{"text":"Blue Dragon\'s Flippers","italic":false}',Lore:['{"text":"Powerful wings, great for swimming. Not very helpful for flying."}']},Enchantments:[{id:"minecraft:binding_curse",lvl:1s},{id:"minecraft:vanishing_curse",lvl:1s}]}
