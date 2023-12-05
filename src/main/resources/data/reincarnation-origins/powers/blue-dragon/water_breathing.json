@@ -1,8 +1,27 @@
 {
-	"type":"origins:action_over_time",
-	"entity_action":{
-		"type":"origins:gain_air",
-		"value":20
-	},
-	"interval":20
+  "type": "origins:multiple",
+  "gain_air": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:gain_air",
+      "value": 20
+    },
+    "interval": 20
+  },
+  "waterbreathing": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 20,
+    "effect": {
+      "effect": "minecraft:water_breathing",
+      "amplifier": 1,
+      "show_particles": false,
+      "show_icon": false
+    },
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water"
+    }
+  }
 }

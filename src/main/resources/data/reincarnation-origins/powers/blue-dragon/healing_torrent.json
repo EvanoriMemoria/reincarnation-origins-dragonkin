@@ -12,21 +12,21 @@
         "type": "origins:if_else_list",
         "actions": [
           {
-            "block_condition": {
+            "condition": {
               "type": "origins:block",
               "block": "minecraft:water"
             },
-            "block_action": {
+            "action": {
               "type": "origins:execute_command",
               "command": "fill ~ ~ ~ ~ ~ ~ minecraft:water replace minecraft:ice"
             }
           },
           {
-            "block_condition": {
+            "condition": {
               "type": "origins:block",
               "block": "minecraft:lava"
             },
-            "block_action": {
+            "action": {
               "type": "origins:execute_command",
               "command": "fill ~ ~ ~ ~ ~ ~ minecraft:lava replace minecraft:obsidian"
             }
@@ -49,7 +49,7 @@
             "effect": {
               "effect": "minecraft:instant_health",
               "duration": 1,
-              "amplifier": 1
+              "amplifier": 0
             }
           }
         ]
@@ -94,27 +94,12 @@
       "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
     },
     "hud_render": {
-      "sprite_location": "origins:textures/gui/resource_bar.png",
-      "bar_index": 7,
-      "should_render": true
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 15
     }
   },
-  "fuel_regen": {
-    "_comment": "Regenerate Fuel Once Every five Seconds while not on fire",
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_fuelbar",
-      "change": 1
-    },
-    "condition": {
-      "type": "origins:on_fire",
-      "inverted": true
-    },
-    "interval": 100
-  },
   "fuel_regen_conditional": {
-    "_comment": "Regenerate an additional fuel Every five Seconds, while in water or rain",
+    "_comment": "Regenerate an additional fuel every three Seconds, while in water or rain",
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
@@ -135,19 +120,42 @@
         }
       ]
     },
-    "interval": 100
+    "interval": 60
   },
   "fuel_degen": {
     "_comment": "Rapidly lose fuel while on fire",
     "type": "origins:action_over_time",
+    "interval": 20,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_fuelbar",
       "change": -1
     },
-    "interval": 40,
     "condition": {
       "type": "origins:on_fire"
+    }
+  },
+  "fuel_degen_lava": {
+    "_comment": "Lose fuel near lava",
+    "type": "origins:action_over_time",
+    "interval": 60,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": -1
+    },
+    "condition": {
+      "type": "origins:block_in_radius",
+      "block_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:lava"
+        }
+      },
+      "radius": 2,
+      "shape": "cube",
+      "comparison": ">=",
+      "compare_to": 1
     }
   }
 }

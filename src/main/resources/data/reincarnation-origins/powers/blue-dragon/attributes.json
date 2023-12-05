@@ -44,12 +44,12 @@
     "modifiers": [
       {
         "attribute": "minecraft:generic.movement_speed",
-        "value": -0.10,
+        "value": -0.04,
         "operation": "addition"
       }
     ],
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:fluid_height",

@@ -7,11 +7,12 @@
     "max": 100,
     "max_action": {
       "type": "origins:execute_command",
-      "command": "function reincarnation-origins:dragonkin/transform_blue"
+      "command": "function reincarnation-origins:dragonkin/transform_white"
     },
     "hud_render": {
-      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
-      "bar_index": 15
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 8
     }
   },
   "recharge": {
@@ -22,30 +23,19 @@
       "change": 5
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:submerged_in",
-          "fluid": "water"
+          "type": "origins:exposed_to_sky"
         },
         {
-          "type": "origins:in_rain"
+          "type": "origins:submerged_in",
+          "fluid": "water",
+          "inverted": true
         }
       ]
     },
     "interval": 20
-  },
-  "fire_decharge": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_bar",
-      "change": -10
-    },
-    "condition": {
-      "type": "origins:on_fire"
-    },
-    "interval": 10
   },
   "decharge": {
     "type": "origins:action_over_time",
@@ -56,25 +46,36 @@
         "type": "origins:change_resource",
         "resource": "*:*_bar",
         "change": -5
+      },
+      "condition": {
+        "type": "origins:exposed_to_sky",
+        "inverted": true
       }
     },
+    "interval": 20
+  },
+  "water-decharge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_bar",
+      "change": -10
+    },
     "condition": {
-      "type": "origins:and",
+      "type": "origins:or",
       "conditions": [
         {
           "type": "origins:fluid_height",
           "fluid": "minecraft:water",
           "comparison": ">",
-          "compare_to": 0.0,
-          "inverted": true
+          "compare_to": 0.0
         },
         {
-          "type": "origins:in_rain",
-          "inverted": true
+          "type": "origins:in_rain"
         }
       ]
     },
-    "interval": 10
+    "cooldown": 10
   },
   "respawn": {
     "type": "origins:action_on_callback",

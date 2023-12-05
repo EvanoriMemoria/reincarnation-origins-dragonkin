@@ -1,0 +1,51 @@
+{
+  "type": "origins:action_over_time",
+  "interval": 5,
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "particle poof ~ ~ ~ 0.1 0.5 0.1 0.1 50 force"
+      },
+      {
+        "type": "origins:add_velocity",
+        "z": 0.50,
+        "space": "local",
+        "client": true,
+        "server": true
+      },
+      {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:on_block"
+        },
+        "if_action": {
+          "type": "origins:add_velocity",
+          "y": 0.50,
+          "space": "world",
+          "client": true,
+          "server": true
+        },
+        "else_action": {
+          "type": "origins:add_velocity",
+          "y": -0.4,
+          "space": "world",
+          "client": true,
+          "server": true
+        }
+      },
+      {
+        "type": "origins:area_of_effect",
+        "radius": 4.5,
+        "bientity_action": {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "tp @s[type=!player] @e[sort=nearest, type=armor_stand, limit=1]"
+          }
+        }
+      }
+    ]
+  }
+}

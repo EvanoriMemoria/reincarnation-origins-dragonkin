@@ -13,24 +13,24 @@
         "command": "fill ~-1 ~ ~ ~1 ~1 ~ minecraft:fire replace minecraft:air"
       },
       "bientity_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:damage",
-            "amount": 2,
-            "source": {
-              "name": "onFire.player",
-              "bypasses_armor": true
-            }
-          },
-          {
-            "type": "origins:target_action",
-            "action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:damage",
+              "amount": 2,
+              "source": {
+                "name": "onFire.player",
+                "bypasses_armor": true
+              }
+            },
+            {
               "type": "origins:set_on_fire",
               "duration": 5
             }
-          }
-        ]
+          ]
+        }
       },
       "before_action": {
         "type": "origins:and",
@@ -73,9 +73,8 @@
       "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
     },
     "hud_render": {
-      "sprite_location": "origins:textures/gui/resource_bar.png",
-      "bar_index": 7,
-      "should_render": true
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 15
     }
   },
   "fuel_regen": {

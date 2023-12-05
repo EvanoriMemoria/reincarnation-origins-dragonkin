@@ -91,9 +91,8 @@
       "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
     },
     "hud_render": {
-      "sprite_location": "origins:textures/gui/resource_bar.png",
-      "bar_index": 7,
-      "should_render": true
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 20
     }
   },
   "fuel_regen": {

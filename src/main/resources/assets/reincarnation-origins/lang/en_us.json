@@ -1,6 +1,8 @@
 {
-  "power.reincarnation-origins.reddragonkin/breath.name": "Fire Breath",
-  "power.reincarnation-origins.reddragonkin/breath.description": "You can breath fire.",
+  "power.reincarnation-origins.reddragonkin/flamethrower.name": "Fire Breath",
+  "power.reincarnation-origins.reddragonkin/flamethrower.description": "You can breath fire.",
+  "power.reincarnation-origins.reddragonkin/master_of_lava.name": "Lava Born",
+  "power.reincarnation-origins.reddragonkin/master_of_lava.description": "You're at home in the lava.",
   "power.reincarnation-origins.reddragonkin/wings.name": "Red Dragon's Wings",
   "power.reincarnation-origins.reddragonkin/wings.description": "You now have the power of flight!"
 }

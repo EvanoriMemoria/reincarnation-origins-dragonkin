@@ -1,8 +1,12 @@
 {
-	"powers":[
-	],
-	"icon":"minecraft:fire_block",
-	"impact":3,
-	"name": "Dragonkin",
-	"description": "A descendant of the Elemental Dragons."
+  "powers": [
+    "reincarnation-origins:dragonkin/blue_transformation",
+    "reincarnation-origins:dragonkin/red_transformation",
+    "reincarnation-origins:dragonkin/white_transformation",
+    "reincarnation-origins:dragonkin/brown_transformation"
+  ],
+  "icon": "minecraft:crying_obsidian",
+  "impact": 3,
+  "name": "Dragonkin",
+  "description": "A descendant of the Elemental Dragons."
 }
