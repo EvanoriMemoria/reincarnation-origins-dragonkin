@@ -3,9 +3,11 @@
     "reincarnation-origins:blue-dragon/attributes",
     "reincarnation-origins:blue-dragon/healing_splash",
     "reincarnation-origins:blue-dragon/leap",
+    "reincarnation-origins:blue-dragon/slow_flier",
     "reincarnation-origins:blue-dragon/swimming",
     "reincarnation-origins:blue-dragon/water_breathing",
-    "reincarnation-origins:blue-dragon/water_vision"
+    "reincarnation-origins:blue-dragon/water_vision",
+    "reincarnation-origins:blue-dragon/wings"
 	],
 	"icon":"minecraft:tube_coral",
 	"impact":3,

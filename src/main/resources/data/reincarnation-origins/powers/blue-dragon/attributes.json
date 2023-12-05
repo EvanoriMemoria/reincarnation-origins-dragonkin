@@ -20,7 +20,7 @@
       },
       {
         "attribute": "minecraft:generic.max_health",
-        "value": 4,
+        "value": 10,
         "operation": "addition"
       }
     ],
@@ -49,14 +49,13 @@
       }
     ],
     "condition": {
-      "type": "origins:and",
+      "type": "origins:or",
       "conditions": [
         {
           "type": "origins:fluid_height",
           "fluid": "minecraft:water",
-          "comparison": ">",
-          "compare_to": 0.0,
-          "inverted": true
+          "comparison": "==",
+          "compare_to": 0.0
         },
         {
           "type": "origins:in_rain",
