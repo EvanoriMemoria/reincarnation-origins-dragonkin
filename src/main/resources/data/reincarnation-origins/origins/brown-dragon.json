@@ -1,8 +1,10 @@
 {
   "powers": [
+    "reincarnation-origins:dragon-support/respawn",
+    "reincarnation-origins:brown-dragon/fuel",
     "reincarnation-origins:brown-dragon/ground_pound",
+    "reincarnation-origins:brown-dragon/low_flight_stamina",
     "reincarnation-origins:brown-dragon/sink_in_water",
-    "reincarnation-origins:brown-dragon/slow_flier",
     "reincarnation-origins:brown-dragon/swim",
     "reincarnation-origins:brown-dragon/wings"
   ],
