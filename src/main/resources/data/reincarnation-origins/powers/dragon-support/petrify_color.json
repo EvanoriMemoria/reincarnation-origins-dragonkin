@@ -1,6 +1,28 @@
 {
-  "type": "origins:model_color",
-  "red": 0.25,
-  "green": 0.25,
-  "blue": 0.25
+  "type": "origins:multiple",
+  "color": {
+    "type": "origins:model_color",
+    "red": 0.25,
+    "green": 0.25,
+    "blue": 0.25
+  },
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 100,
+    "start_value": 100,
+    "min_action": {
+      "type": "origins:execute_command",
+      "command": "power revoke @s reincarnation-origins:dragon-support/petrify_color"
+    }
+  },
+  "timer": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_resource",
+      "change": -20
+    }
+  }
 }
