@@ -1,10 +1,12 @@
 {
 	"powers":[
+		"reincarnation-origins:dragon-support/respawn",
 		"reincarnation-origins:white-dragon/boost",
 		"reincarnation-origins:white-dragon/callbacks",
     "reincarnation-origins:white-dragon/cyclone",
-		"reincarnation-origins:white-dragon/fast_flier",
     "reincarnation-origins:white-dragon/float",
+		"reincarnation-origins:white-dragon/fuel",
+		"reincarnation-origins:white-dragon/high_flight_stamina",
 		"reincarnation-origins:white-dragon/wings"
 	],
 	"icon":"minecraft:dead_brain_coral",

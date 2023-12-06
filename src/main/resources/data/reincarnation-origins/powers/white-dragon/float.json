@@ -21,7 +21,7 @@
     "condition": {
       "type": "origins:in_block_anywhere",
       "comparison": ">",
-      "compare_to": 0.1,
+      "compare_to": 0.3,
       "block_condition": {
         "type": "origins:block",
         "block": "minecraft:water"
