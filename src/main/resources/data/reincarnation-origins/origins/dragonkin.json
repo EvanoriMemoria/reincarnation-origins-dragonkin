@@ -1,9 +1,15 @@
 {
   "powers": [
+    "reincarnation-origins:dragonkin/blue_effects",
     "reincarnation-origins:dragonkin/blue_transformation",
+    "reincarnation-origins:dragonkin/brown_effects",
+    "reincarnation-origins:dragonkin/brown_transformation",
+    "reincarnation-origins:dragonkin/low_flight_stamina",
+    "reincarnation-origins:dragonkin/red_effects",
     "reincarnation-origins:dragonkin/red_transformation",
+    "reincarnation-origins:dragonkin/white_effects",
     "reincarnation-origins:dragonkin/white_transformation",
-    "reincarnation-origins:dragonkin/brown_transformation"
+    "reincarnation-origins:dragonkin/wings"
   ],
   "icon": "minecraft:crying_obsidian",
   "impact": 3,

@@ -1,0 +1,1 @@
+trinkets set chest cape 0 icarus:black_dragon_wings{display:{Name:'{"text":"Dragonkin\'s Gliders","italic":false}', Lore:['{"text":"Once powerful wings, without imbuement from the elements they lack the power to go far."}']},Enchantments:[{id:"minecraft:binding_curse",lvl:1s},{id:"minecraft:vanishing_curse",lvl:1s}]}

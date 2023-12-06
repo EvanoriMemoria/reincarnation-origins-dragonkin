@@ -2,14 +2,14 @@
   "type": "origins:multiple",
   "more_breath": {
     "type": "origins:action_over_time",
-    "interval": 10,
     "entity_action": {
       "type": "origins:gain_air",
       "value": 5
     },
+    "interval": 10,
     "condition": {
       "type": "origins:resource",
-      "resource": "reincarnation-origins:dragonkin/blue_transformation_bar",
+      "resource": "reincarnation-origins:dragonkin/white_transformation_bar",
       "comparison": ">=",
       "compare_to": 50
     }

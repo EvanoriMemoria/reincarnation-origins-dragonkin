@@ -1,0 +1,63 @@
+{
+  "type": "origins:multiple",
+  "25_fire_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Take less fire damage",
+      "operation": "multiply_base_additive",
+      "value": -0.10
+    },
+    "damage_condition": {
+      "type": "origins:fire"
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "reincarnation-origins:dragonkin/red_transformation_bar",
+        "comparison": ">=",
+        "compare_to": 25
+      }
+    }
+  },
+  "50_fire_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Take less fire damage",
+      "operation": "multiply_base_additive",
+      "value": -0.20
+    },
+    "damage_condition": {
+      "type": "origins:fire"
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "reincarnation-origins:dragonkin/red_transformation_bar",
+        "comparison": ">=",
+        "compare_to": 50
+      }
+    }
+  },
+  "75_fire_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Take less fire damage",
+      "operation": "multiply_base_additive",
+      "value": -0.30
+    },
+    "damage_condition": {
+      "type": "origins:fire"
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "reincarnation-origins:dragonkin/red_transformation_bar",
+        "comparison": ">=",
+        "compare_to": 75
+      }
+    }
+  }
+}
