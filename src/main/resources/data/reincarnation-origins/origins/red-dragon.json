@@ -1,15 +1,17 @@
 {
 	"powers":[
+    "reincarnation-origins:dragon-support/respawn",
     "reincarnation-origins:red-dragon/flamethrower",
+    "reincarnation-origins:red-dragon/fuel",
+    "reincarnation-origins:red-dragon/low_flight_stamina",
     "reincarnation-origins:red-dragon/master_of_lava",
-    "reincarnation-origins:red-dragon/slow_flier",
     "reincarnation-origins:red-dragon/slow_swimmer",
     "reincarnation-origins:red-dragon/water_vulnerability",
     "reincarnation-origins:red-dragon/wings"
 	],
-	"icon":"minecraft:fire_coral",
-	"impact":3,
+	"icon": "minecraft:fire_coral",
+	"impact": 3,
 	"name": "Red Dragon",
 	"description": "A descendant of the Red Dragons. You have an affinity for fire.",
-  "unchoosable":true
+  "unchoosable": true
 }

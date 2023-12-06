@@ -1,0 +1,57 @@
+{
+  "type": "origins:multiple",
+  "lose_stamina": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:exhaust",
+          "amount": 0.5
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "reincarnation-origins:red-dragon/fuel_fuelbar",
+          "change": -2
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fall_flying"
+        }
+      ]
+    }
+  },
+  "no_food": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:food"
+    },
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+  "slowness": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": -10,
+    "max_stacks": 1,
+    "duration_per_stack": 20,
+    "tick_rate": 20,
+    "effects": [
+      {
+        "effect": "minecraft:slowness",
+        "amplifier": 0,
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": true
+      }
+    ],
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  }
+}

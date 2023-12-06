@@ -1,0 +1,152 @@
+{
+  "type": "origins:multiple",
+  "fuelbar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 100,
+    "start_value": 50,
+    "min_action": {
+      "type": "origins:execute_command",
+      "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
+    },
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 15
+    }
+  },
+  "fuel_regen_lava": {
+    "_comment": "Gain fuel in lava",
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": 2
+    },
+    "condition": {
+      "type": "origins:fluid_height",
+      "fluid": "minecraft:lava",
+      "comparison": ">",
+      "compare_to": 0.0
+    }
+  },
+  "fuel_regen_submerged_lava": {
+    "_comment": "Gain fuel while submerged in lava",
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": 2
+    },
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "lava"
+    }
+  },
+  "fuel_regen_on_fire": {
+    "_comment": "Gain fuel while on fire",
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": 2
+    },
+    "condition": {
+      "type": "origins:on_fire"
+    }
+  },
+  "fuel_regen_advancement": {
+    "_comment": "Generate fuel after completing the breath advancement",
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:advancement",
+          "advancement": "reincarnation-origins:red-dragon/breath"
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0,
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        },
+        {
+          "type": "origins:fall_flying",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "fuel_degen_water": {
+    "_comment": "Rapidly lose fuel while touching rain or water",
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": -10
+    },
+    "interval": 10,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  },
+  "fuel_degen_hot_stuff": {
+    "_comment": "Slowly lose fuel when there is no nearby hot stuff.",
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": -2
+    },
+    "interval": 10,
+    "condition": {
+      "type": "origins:block_in_radius",
+      "block_condition": {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:block",
+            "block": "minecraft:lava"
+          },
+          {
+            "type": "origins:block",
+            "block": "minecraft:fire"
+          },
+          {
+            "type": "origins:block",
+            "block": "minecraft:magma_block"
+          }
+        ]
+      },
+      "radius": 6,
+      "shape": "cube",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  }
+}
