@@ -6,9 +6,25 @@
     "bar_index": 1
   },
   "entity_action": {
-    "type": "origins:add_velocity",
-    "z": 2,
-    "space": "local"
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:add_velocity",
+        "z": 2.5,
+        "space": "local"
+      },
+      {
+        "type": "origins:apply_effect",
+        "effect": {
+          "effect": "minecraft:dolphins_grace",
+          "duration": 12,
+          "amplifier": 0,
+          "is_ambient": true,
+          "show_particles": false,
+          "show_icon": true
+        }
+      }
+    ]
   },
   "condition": {
     "type": "origins:or",
@@ -17,7 +33,7 @@
         "type": "origins:fluid_height",
         "fluid": "minecraft:water",
         "comparison": ">",
-        "compare_to": 0
+        "compare_to": 0.0
       },
       {
         "type": "origins:in_rain"

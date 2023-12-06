@@ -1,67 +1,39 @@
 {
-  "type": "origins:multiple",
-  "attributes": {
-    "type": "origins:conditioned_attribute",
-    "modifiers": [
-      {
-        "attribute": "minecraft:generic.armor_toughness",
-        "value": 4,
-        "operation": "addition"
-      },
-      {
-        "attribute": "minecraft:generic.armor",
-        "value": 6,
-        "operation": "addition"
-      },
-      {
-        "attribute": "minecraft:generic.knockback_resistance",
-        "value": 1,
-        "operation": "addition"
-      },
-      {
-        "attribute": "minecraft:generic.max_health",
-        "value": 10,
-        "operation": "addition"
-      }
-    ],
-    "condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:fluid_height",
-          "fluid": "minecraft:water",
-          "comparison": ">",
-          "compare_to": 0.0
-        },
-        {
-          "type": "origins:in_rain"
-        }
-      ]
+  "type": "origins:conditioned_attribute",
+  "modifiers": [
+    {
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 4,
+      "operation": "addition"
+    },
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 6,
+      "operation": "addition"
+    },
+    {
+      "attribute": "minecraft:generic.knockback_resistance",
+      "value": 0.5,
+      "operation": "addition"
+    },
+    {
+      "attribute": "minecraft:generic.max_health",
+      "value": 10,
+      "operation": "addition"
     }
-  },
-  "slow_on_land": {
-    "type": "origins:conditioned_attribute",
-    "modifiers": [
+  ],
+  "condition": {
+    "type": "origins:or",
+    "conditions": [
       {
-        "attribute": "minecraft:generic.movement_speed",
-        "value": -0.04,
-        "operation": "addition"
+        "type": "origins:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": ">",
+        "compare_to": 0.0
+      },
+      {
+        "type": "origins:in_rain"
       }
-    ],
-    "condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:fluid_height",
-          "fluid": "minecraft:water",
-          "comparison": "==",
-          "compare_to": 0.0
-        },
-        {
-          "type": "origins:in_rain",
-          "inverted": true
-        }
-      ]
-    }
+    ]
   }
 }

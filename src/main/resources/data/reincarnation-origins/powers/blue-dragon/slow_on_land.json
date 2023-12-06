@@ -1,0 +1,25 @@
+{
+  "type": "origins:conditioned_attribute",
+  "modifiers": [
+    {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": -0.04,
+      "operation": "addition"
+    }
+  ],
+  "condition": {
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": "==",
+        "compare_to": 0.0
+      },
+      {
+        "type": "origins:in_rain",
+        "inverted": true
+      }
+    ]
+  }
+}

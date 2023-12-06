@@ -16,12 +16,18 @@
                 {
                   "effect": "minecraft:regeneration",
                   "duration": 10,
-                  "amplifier": 1
+                  "amplifier": 1,
+                  "is_ambient": true,
+                  "show_particles": false,
+                  "show_icon": true
                 },
                 {
                   "effect": "minecraft:instant_health",
                   "duration": 1,
-                  "amplifier": 1
+                  "amplifier": 1,
+                  "is_ambient": true,
+                  "show_particles": false,
+                  "show_icon": true
                 }
               ]
             }
@@ -36,9 +42,60 @@
                   "amount": 0.1
                 },
                 {
+                  "type": "origins:apply_effect",
+                  "effects": [
+                    {
+                      "effect": "minecraft:regeneration",
+                      "duration": 10,
+                      "amplifier": 1,
+                      "is_ambient": true,
+                      "show_particles": false,
+                      "show_icon": true
+                    },
+                    {
+                      "effect": "minecraft:instant_health",
+                      "duration": 1,
+                      "amplifier": 1,
+                      "is_ambient": true,
+                      "show_particles": false,
+                      "show_icon": true
+                    }
+                  ]
+                },
+                {
                   "type": "origins:change_resource",
-                  "resource": "*:*_fuelbar",
+                  "resource": "reincarnation-origins:blue-dragon/fuel_fuelbar",
                   "change": -4
+                },
+                {
+                  "type": "origins:spawn_particles",
+                  "particle": {
+                    "type": "minecraft:splash",
+                    "params": "0.922 0.314 0.314 2"
+                  },
+                  "count": 4,
+                  "speed": 0.0,
+                  "force": true,
+                  "spread": {
+                    "x": 1.0,
+                    "y": 0.0,
+                    "z": 1.0
+                  }
+                },
+                {
+                  "type": "origins:spawn_particles",
+                  "particle": {
+                    "type": "minecraft:bubble",
+                    "params": "0.922 0.314 0.314 2"
+                  },
+                  "count": 4,
+                  "speed": 0.0,
+                  "force": true,
+                  "spread": {
+                    "x": 1.0,
+                    "y": 0.0,
+                    "z": 1.0
+                  }
                 }
               ]
             }
@@ -55,84 +112,13 @@
     },
     "condition": {
       "type": "origins:resource",
-      "resource": "*:*_fuelbar",
+      "resource": "reincarnation-origins:blue-dragon/fuel_fuelbar",
       "comparison": ">",
       "compare_to": 4
     },
     "key": {
       "key": "key.origins.primary_active",
       "continuous": true
-    }
-  },
-  "fuelbar": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 32,
-    "min_action": {
-      "type": "origins:execute_command",
-      "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
-    },
-    "hud_render": {
-      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
-      "bar_index": 15
-    }
-  },
-  "fuel_regen_conditional": {
-    "_comment": "Regenerate an additional fuel every three Seconds, while in water or rain",
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_fuelbar",
-      "change": 1
-    },
-    "condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:fluid_height",
-          "fluid": "minecraft:water",
-          "comparison": ">",
-          "compare_to": 0.0
-        },
-        {
-          "type": "origins:in_rain"
-        }
-      ]
-    },
-    "interval": 10
-  },
-  "fuel_degen": {
-    "_comment": "Rapidly lose fuel while on fire",
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_fuelbar",
-      "change": -1
-    },
-    "condition": {
-      "type": "origins:on_fire"
-    }
-  },
-  "fuel_degen_lava": {
-    "_comment": "Lose fuel near lava",
-    "type": "origins:action_over_time",
-    "interval": 60,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_fuelbar",
-      "change": -1
-    },
-    "condition": {
-      "type": "origins:block_in_radius",
-      "block_condition": {
-        "type": "origins:block",
-        "block": "minecraft:lava"
-      },
-      "radius": 2,
-      "shape": "cube",
-      "comparison": ">=",
-      "compare_to": 1
     }
   }
 }
