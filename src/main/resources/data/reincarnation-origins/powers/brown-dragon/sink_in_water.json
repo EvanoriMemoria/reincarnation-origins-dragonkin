@@ -1,7 +1,11 @@
 {
   "type": "origins:multiple",
   "ignore_water": {
-    "type": "origins:ignore_water"
+    "type": "origins:ignore_water",
+    "condition": {
+      "type": "origins:in_block_anywhere",
+      "block": "minecraft:water"
+    }
   },
   "no_depth_strider": {
     "type": "origins:conditioned_attribute",
@@ -169,8 +173,9 @@
     }
   },
   "slow_falling_in_water": {
+    "_comment": "default velocity: 0.024",
     "type": "origins:modify_falling",
-    "velocity": 0.024,
+    "velocity": 0.015,
     "condition": {
       "type": "origins:in_block",
       "block_condition": {

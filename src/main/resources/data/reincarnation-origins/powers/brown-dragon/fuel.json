@@ -15,30 +15,7 @@
     }
   },
   "fuel_regen_no_sky": {
-    "_comment": "Regenerate Fuel Once Every Five Seconds while not under the sky",
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_fuelbar",
-      "change": 1
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:exposed_to_sky",
-          "inverted": true
-        },
-        {
-          "type": "origins:fall_flying",
-          "inverted": true
-        }
-      ]
-    },
-    "interval": 10
-  },
-  "fuel_regen_stone": {
-    "_comment": "Generate fuel while near enough natural stone",
+    "_comment": "Generate fuel while not under the sky, and with enough stone blocks in range",
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
@@ -49,6 +26,10 @@
       "type": "origins:and",
       "conditions": [
         {
+          "type": "origins:exposed_to_sky",
+          "inverted": true
+        },
+        {
           "type": "origins:block_in_radius",
           "block_condition": {
             "type": "origins:in_tag",
@@ -58,10 +39,6 @@
           "shape": "cube",
           "comparison": ">=",
           "compare_to": 5
-        },
-        {
-          "type": "origins:fall_flying",
-          "inverted": true
         }
       ]
     },
@@ -72,11 +49,11 @@
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:delay",
-      "ticks": 60,
+      "ticks": 30,
       "action": {
         "type": "origins:change_resource",
         "resource": "*:*_fuelbar",
-        "change": -5
+        "change": -3
       }
     },
     "interval": 10,

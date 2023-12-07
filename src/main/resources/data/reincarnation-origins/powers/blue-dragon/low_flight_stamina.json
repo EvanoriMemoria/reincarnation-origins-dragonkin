@@ -37,9 +37,9 @@
   },
   "slowness": {
     "type": "origins:stacking_status_effect",
-    "min_stacks": -10,
+    "min_stacks": -5,
     "max_stacks": 1,
-    "duration_per_stack": 20,
+    "duration_per_stack": 40,
     "tick_rate": 20,
     "effects": [
       {
@@ -56,14 +56,33 @@
   },
   "slowness_two": {
     "type": "origins:stacking_status_effect",
-    "min_stacks": -30,
+    "min_stacks": -10,
     "max_stacks": 1,
-    "duration_per_stack": 20,
+    "duration_per_stack": 40,
     "tick_rate": 20,
     "effects": [
       {
         "effect": "minecraft:slowness",
         "amplifier": 1,
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": true
+      }
+    ],
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+  "slowness_three": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": -15,
+    "max_stacks": 1,
+    "duration_per_stack": 40,
+    "tick_rate": 20,
+    "effects": [
+      {
+        "effect": "minecraft:slowness",
+        "amplifier": 2,
         "is_ambient": true,
         "show_particles": false,
         "show_icon": true

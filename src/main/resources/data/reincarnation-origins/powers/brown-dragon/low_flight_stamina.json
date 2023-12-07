@@ -2,7 +2,7 @@
   "type": "origins:multiple",
   "lose_stamina": {
     "type": "origins:action_over_time",
-    "interval": 20,
+    "interval": 30,
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -37,9 +37,9 @@
   },
   "slowness": {
     "type": "origins:stacking_status_effect",
-    "min_stacks": -5,
+    "min_stacks": 1,
     "max_stacks": 1,
-    "duration_per_stack": 20,
+    "duration_per_stack": 40,
     "tick_rate": 20,
     "effects": [
       {
@@ -56,14 +56,52 @@
   },
   "slowness_two": {
     "type": "origins:stacking_status_effect",
-    "min_stacks": -20,
+    "min_stacks": -9,
     "max_stacks": 1,
-    "duration_per_stack": 20,
+    "duration_per_stack": 40,
     "tick_rate": 20,
     "effects": [
       {
         "effect": "minecraft:slowness",
         "amplifier": 1,
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": true
+      }
+    ],
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+  "slowness_three": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": -14,
+    "max_stacks": 1,
+    "duration_per_stack": 40,
+    "tick_rate": 20,
+    "effects": [
+      {
+        "effect": "minecraft:slowness",
+        "amplifier": 2,
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": true
+      }
+    ],
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+  "slowness_four": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": -19,
+    "max_stacks": 1,
+    "duration_per_stack": 40,
+    "tick_rate": 20,
+    "effects": [
+      {
+        "effect": "minecraft:slowness",
+        "amplifier": 3,
         "is_ambient": true,
         "show_particles": false,
         "show_icon": true

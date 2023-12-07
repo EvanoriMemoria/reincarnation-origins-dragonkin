@@ -41,5 +41,6 @@
   "power.reincarnation-origins.brown-dragon/wings.description": "You can only fly for a short amount of time.",
 
   "reincarnation-origins.dragonkin.error.not_enough_fuel": "Not enough fuel!",
+  "reincarnation-origins.blue-dragon.error.no_water": "You must be in water!",
   "reincarnation-origins.white-dragon.error.no_sky": "You are not under the sky."
 }

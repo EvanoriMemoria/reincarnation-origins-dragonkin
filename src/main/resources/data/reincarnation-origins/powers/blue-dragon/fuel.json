@@ -17,10 +17,11 @@
   "fuel_regen_conditional": {
     "_comment": "Generate fuel while in water or rain",
     "type": "origins:action_over_time",
+    "interval": 10,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_fuelbar",
-      "change": 5
+      "change": 3
     },
     "condition": {
       "type": "origins:or",
@@ -35,8 +36,7 @@
           "type": "origins:in_rain"
         }
       ]
-    },
-    "interval": 10
+    }
   },
   "fuel_degen": {
     "_comment": "Rapidly lose fuel while on fire",
@@ -57,7 +57,7 @@
     "interval": 10,
     "entity_action": {
       "type": "origins:delay",
-      "ticks": 60,
+      "ticks": 30,
       "action": {
         "type": "origins:change_resource",
         "resource": "*:*_fuelbar",
@@ -87,6 +87,32 @@
       "shape": "cube",
       "comparison": ">=",
       "compare_to": 1
+    }
+  },
+  "degen_out_of_water": {
+    "_comment": "lose fuel while out of water",
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": -2
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0,
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        }
+      ]
     }
   }
 }
