@@ -15,7 +15,7 @@
     "duration_per_stack": 20,
     "effect": {
       "effect": "minecraft:water_breathing",
-      "amplifier": 1,
+      "amplifier": 0,
       "show_particles": false,
       "show_icon": false
     },
