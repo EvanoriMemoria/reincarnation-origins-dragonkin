@@ -16,7 +16,7 @@
   },
   "hover": {
     "type": "origins:modify_falling",
-    "velocity": 0.0,
+    "velocity": -0.033,
     "take_fall_damage": false,
     "condition": {
       "type": "origins:in_block_anywhere",

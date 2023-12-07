@@ -2,8 +2,8 @@
   "type": "origins:multiple",
   "ignore_water": {
     "type": "origins:ignore_water",
-    "condition": {
-      "type": "origins:in_block_anywhere",
+    "block-condition": {
+      "type": "origins:block",
       "block": "minecraft:water"
     }
   },
