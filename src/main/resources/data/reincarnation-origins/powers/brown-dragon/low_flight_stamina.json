@@ -35,6 +35,86 @@
       "type": "origins:fall_flying"
     }
   },
+  "air_speed_25": {
+    "type": "origins:modify_air_speed",
+    "modifier": {
+      "operation": "multiply_base_additive",
+      "value": -0.25
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fall_flying"
+        },
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:slowness",
+          "min_amplifier": 0
+        }
+      ]
+    }
+  },
+  "air_speed_50": {
+    "type": "origins:modify_air_speed",
+    "modifier": {
+      "operation": "multiply_base_additive",
+      "value": -0.50
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fall_flying"
+        },
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:slowness",
+          "min_amplifier": 1
+        }
+      ]
+    }
+  },
+  "air_speed_75": {
+    "type": "origins:modify_air_speed",
+    "modifier": {
+      "operation": "multiply_base_additive",
+      "value": -0.75
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fall_flying"
+        },
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:slowness",
+          "min_amplifier": 2
+        }
+      ]
+    }
+  },
+  "air_speed_100": {
+    "type": "origins:modify_air_speed",
+    "modifier": {
+      "operation": "multiply_base_additive",
+      "value": -1.00
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fall_flying"
+        },
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:slowness",
+          "min_amplifier": 3
+        }
+      ]
+    }
+  },
   "slowness": {
     "type": "origins:stacking_status_effect",
     "min_stacks": 1,
