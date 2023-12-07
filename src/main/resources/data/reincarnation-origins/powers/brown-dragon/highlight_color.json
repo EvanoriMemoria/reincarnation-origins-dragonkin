@@ -1,0 +1,129 @@
+{
+  "type": "origins:multiple",
+  "hidden": true,
+  "dirt": {
+    "type": "origins:entity_glow",
+    "entity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:shulker"
+        },
+        {
+          "type": "origins:in_block_anywhere",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:dirt"
+          }
+        }
+      ]
+    },
+    "use_teams": false,
+    "red": 0.77,
+    "green": 0.38,
+    "blue": 0.06
+  },
+  "sand": {
+    "type": "origins:entity_glow",
+    "entity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:shulker"
+        },
+        {
+          "type": "origins:in_block_anywhere",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sand"
+          }
+        }
+      ]
+    },
+    "use_teams": false,
+    "red": 1,
+    "green": 0.88,
+    "blue": 0.3
+  },
+  "clay": {
+    "type": "origins:entity_glow",
+    "entity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:shulker"
+        },
+        {
+          "type": "origins:in_block_anywhere",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:clay"
+          }
+        }
+      ]
+    },
+    "use_teams": false,
+    "red": 0.36,
+    "green": 0.54,
+    "blue": 0.66
+  },
+  "active": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_cooldown",
+          "comparison": "<=",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:power_active",
+          "power": "reincarnation-origins:brown-dragon/swim_toggle"
+        }
+      ]
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:block_action_at",
+          "block_action": {
+            "type": "origins:execute_command",
+            "command": "summon minecraft:armor_stand ~ ~-0.5 ~ {Invulnerable:1,NoGravity:1,Small:1,Invisible:1}"
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "power grant @e[type=minecraft:armor_stand,nbt={Invulnerable:1b,NoGravity:1b,Small:1b},distance=..1] reincarnation-origins:brown-dragon/highlight_support/search9"
+        }
+      ]
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 300,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 7
+    }
+  },
+  "reset_cooldown": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "resource": "*:*_cooldown",
+      "change": 0
+    },
+    "entity_action_gained": {
+      "type": "origins:change_resource",
+      "resource": "*:*_cooldown",
+      "change": 0
+    }
+  }
+}
