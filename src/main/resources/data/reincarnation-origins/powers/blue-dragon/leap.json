@@ -9,7 +9,7 @@
       "command": "title @s actionbar {\"translate\":\"reincarnation-origins.blue-dragon.error.no_water\",\"color\":\"blue\",\"bold\":true}"
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:fluid_height",
