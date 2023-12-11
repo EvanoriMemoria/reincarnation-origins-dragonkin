@@ -130,10 +130,16 @@
           "command": "execute as @e[type=minecraft:armor_stand,nbt={Invulnerable:1b,NoGravity:1b,Small:1b,Invisible:1b},distance=..8] run power grant @s reincarnation-origins:brown-dragon/highlight_support/search3"
         },
 
-        { "type": "origins:execute_command", "command": "kill @s" }
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
+        }
       ]
     },
-    "else_action": { "type": "origins:execute_command", "command": "kill @s" }
+    "else_action": {
+      "type": "origins:execute_command",
+      "command": "kill @s"
+    }
   },
   "interval": 1
 }

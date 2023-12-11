@@ -20,7 +20,7 @@
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_fuelbar",
-      "change": 3
+      "change": 1
     },
     "condition": {
       "type": "origins:and",
@@ -48,13 +48,9 @@
     "_comment": "Lose fuel while under the sky",
     "type": "origins:action_over_time",
     "entity_action": {
-      "type": "origins:delay",
-      "ticks": 30,
-      "action": {
-        "type": "origins:change_resource",
-        "resource": "*:*_fuelbar",
-        "change": -3
-      }
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": -2
     },
     "interval": 10,
     "condition": {

@@ -1,8 +1,24 @@
 {
   "type": "origins:multiple",
+  "fuel_error": {
+    "type": "origins:active_self",
+    "key": "key.origins.primary_active",
+    "cooldown": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @s actionbar {\"translate\":\"reincarnation-origins.dragonkin.error.not_enough_fuel\",\"color\":\"gold\",\"bold\":true}"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "reincarnation-origins:brown-dragon/fuel_fuelbar",
+      "comparison": "<",
+      "compare_to": 10
+    }
+  },
   "stomp": {
     "type": "origins:active_self",
     "key": "key.origins.primary_active",
+    "cooldown": 300,
     "condition": {
       "type": "origins:resource",
       "resource": "reincarnation-origins:brown-dragon/fuel_fuelbar",
@@ -10,101 +26,80 @@
       "compare_to": 10
     },
     "entity_action": {
-      "type": "origins:area_of_effect",
-      "radius": 8,
-      "bientity_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:target_action",
-            "action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:add_velocity",
-                  "client": true,
-                  "z": 1.6,
-                  "y": 0.6
-                },
-                {
-                  "type": "origins:apply_effect",
-                  "effects": {
-                    "effect": "minecraft:slowness",
-                    "amplifier": 9,
-                    "duration": 100,
-                    "is_ambient": true,
-                    "show_particles": false,
-                    "show_icon": true
-                  }
-                },
-                {
-                  "type": "origins:damage",
-                  "amount": 6,
-                  "source": {
-                    "name": "fall.player",
-                    "bypasses_armor": true
-                  }
-                },
-                {
-                  "type": "origins:execute_command",
-                  "command": "particle minecraft:poof 1 0.3 0 1 ~ ~1 ~ 12 12 12 1 300 normal"
-                },
-                {
-                  "type": "origins:execute_command",
-                  "command": "power grant @s reincarnation-origins:dragon-support/petrify_color"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function reincarnation-origins:brown-dragon/stomp_particles"
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 8,
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:add_velocity",
+                      "client": true,
+                      "z": 1.6,
+                      "y": 0.6
+                    },
+                    {
+                      "type": "origins:apply_effect",
+                      "effects": {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 9,
+                        "duration": 100,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                      }
+                    },
+                    {
+                      "type": "origins:damage",
+                      "amount": 6,
+                      "source": {
+                        "name": "fall.player",
+                        "bypasses_armor": true
+                      }
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:poof 1 0.3 0 1 ~ ~1 ~ 12 12 12 1 300 normal"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "power grant @s reincarnation-origins:dragon-support/petrify_color"
+                    }
+                  ]
                 }
-              ]
-            }
-          },
-          {
-            "type": "origins:actor_action",
-            "action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:exhaust",
-                  "amount": 0.1
-                },
-                {
-                  "type": "origins:change_resource",
-                  "resource": "reincarnation-origins:brown-dragon/fuel_fuelbar",
-                  "change": -10
-                },
-                {
-                  "type": "origins:spawn_particles",
-                  "particle": {
-                    "type": "minecraft:poof",
-                    "params": "0.922 0.314 0.314 2"
-                  },
-                  "count": 10,
-                  "speed": 1.0,
-                  "force": true,
-                  "spread": {
-                    "x": 1.0,
-                    "y": 0.0,
-                    "z": 1.0
-                  }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:exhaust",
+                      "amount": 0.1
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "reincarnation-origins:brown-dragon/fuel_fuelbar",
+                      "change": -10
+                    }
+                  ]
                 }
-              ]
-            }
+              }
+            ]
           }
-        ]
-      }
-    }
-  },
-  "fuel_error": {
-    "type": "origins:active_self",
-    "key": "key.origins.primary_active",
-    "cooldown": 1,
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "title @s actionbar {\"translate\":\"reincarnation-origins.dragonkin.error.not_enough_fuel\",\"color\":\"brown\",\"bold\":true}"
-    },
-    "condition": {
-      "type": "origins:resource",
-      "resource": "reincarnation-origins:blue-dragon/fuel_fuelbar",
-      "comparison": "<",
-      "compare_to": 10
+        }
+      ]
     }
   }
 }

@@ -1,8 +1,0 @@
-{
-    "order": 999,
-    "origins": [
-        "xray:universal"
-    ],
-    "auto_choose": true,
-    "hidden": true
-}

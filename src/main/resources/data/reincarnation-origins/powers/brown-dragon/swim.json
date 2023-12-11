@@ -60,7 +60,7 @@
     "type": "origins:toggle",
     "active_by_default": false,
     "key": {
-      "key": "key.origins.secondary_active"
+      "key": "key.saveToolbarActivator"
     }
   },
   "slow_falling_in_stone": {
@@ -72,6 +72,18 @@
         "type": "origins:in_tag",
         "tag": "minecraft:base_stone_overworld"
       }
+    }
+  },
+  "passive_souls": {
+    "type": "origins:action_over_time",
+    "interval": 30,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "reincarnation-origins:brown-dragon/swim_toggle"
+    },
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:soul ~ ~ ~ 5 5 5 0 10 normal"
     }
   }
 }
