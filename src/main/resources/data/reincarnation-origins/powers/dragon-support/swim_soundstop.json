@@ -1,0 +1,49 @@
+{
+  "type": "origins:action_over_time",
+  "name": "Credit:",
+  "description": "Creator: Interface5",
+  "hidden": true,
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "/stopsound @s * minecraft:ambient.underwater.loop"
+      },
+      {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "/stopsound @s * minecraft:ambient.underwater.loop.additions"
+      },
+      {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "/stopsound @s * minecraft:ambient.underwater.loop.additions.rare"
+      },
+      {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "/stopsound @s * minecraft:ambient.underwater.loop.additions.ultra_rare"
+      },
+      {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "/stopsound @s * minecraft:entity.generic.swim"
+      },
+      {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "/stopsound @s * minecraft:entity.player.swim"
+      }
+    ]
+  },
+  "condition": {
+    "type": "origins:fluid_height",
+    "inverted": true,
+    "comparison": ">",
+    "fluid": "minecraft:water",
+    "compare_to": 1
+  },
+  "interval": 1
+}
