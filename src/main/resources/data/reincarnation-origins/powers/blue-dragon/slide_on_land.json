@@ -4,7 +4,24 @@
     "type": "origins:modify_slipperiness",
     "modifier": {
       "operation": "multiply_total",
-      "value": -0.5
+      "value": 1.5
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:on_block"
+        },
+        {
+          "type": "origins:swimming"
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": "==",
+          "compare_to": 0.0
+        }
+      ]
     }
   },
   "belly_slide": {
@@ -12,6 +29,73 @@
     "condition": {
       "type": "origins:and",
       "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": "==",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:on_block"
+        }
+      ]
+    }
+  },
+  "fast-swim-land": {
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": 1.0
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": "==",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:on_block"
+        }
+      ]
+    }
+  },
+  "step-height": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:swimming"
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "scale multiply pehkui:step_height 2"
+      },
+      "else_action": {
+        "type": "origins:execute_command",
+        "command": "scale reset"
+      }
+    }
+  },
+  "splashy-slide": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:splash ~ ~ ~ 1 0 1 1 50 normal"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:on_block"
+        },
+        {
+          "type": "origins:swimming"
+        },
         {
           "type": "origins:fluid_height",
           "fluid": "minecraft:water",
