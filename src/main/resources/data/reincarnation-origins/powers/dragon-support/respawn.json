@@ -7,5 +7,9 @@
       "type": "origins:execute_command",
       "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
     }
+  },
+  "entity_action_removed": {
+    "type": "origins:execute_command",
+    "command": "scale reset"
   }
 }

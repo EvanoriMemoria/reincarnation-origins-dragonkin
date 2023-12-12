@@ -54,7 +54,7 @@
     "type": "origins:modify_air_speed",
     "modifier": {
       "operation": "multiply_base_additive",
-      "value": -0.50
+      "value": -0.5
     },
     "condition": {
       "type": "origins:and",
@@ -94,7 +94,28 @@
     "type": "origins:modify_air_speed",
     "modifier": {
       "operation": "multiply_base_additive",
-      "value": -1.00
+      "value": -1.0
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fall_flying"
+        },
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:slowness",
+          "min_amplifier": 3
+        }
+      ]
+    }
+  },
+  "no_fly_trigger": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:trigger_cooldown",
+      "power": "reincarnation-origins:dragonkin/no_fly_cooldown"
     },
     "condition": {
       "type": "origins:and",
@@ -131,7 +152,7 @@
   },
   "slowness_two": {
     "type": "origins:stacking_status_effect",
-    "min_stacks": -10,
+    "min_stacks": -1,
     "max_stacks": 1,
     "duration_per_stack": 40,
     "tick_rate": 20,
@@ -150,7 +171,7 @@
   },
   "slowness_three": {
     "type": "origins:stacking_status_effect",
-    "min_stacks": -15,
+    "min_stacks": -2,
     "max_stacks": 1,
     "duration_per_stack": 40,
     "tick_rate": 20,
@@ -169,7 +190,7 @@
   },
   "slowness_four": {
     "type": "origins:stacking_status_effect",
-    "min_stacks": -20,
+    "min_stacks": -3,
     "max_stacks": 1,
     "duration_per_stack": 40,
     "tick_rate": 20,

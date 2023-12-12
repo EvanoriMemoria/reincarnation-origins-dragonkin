@@ -1,0 +1,24 @@
+{
+  "type": "origins:multiple",
+  "no_fly": {
+    "type": "origins:prevent_elytra_flight",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @s actionbar {\"translate\":\"reincarnation-origins.dragonkin.error.too_tired\",\"color\":\"red\",\"bold\":true}"
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_cooldown",
+        "comparison": ">",
+        "compare_to": 0
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 1200,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 3
+    }
+  }
+}
