@@ -36,7 +36,71 @@
           "compare_to": 0.0
         },
         {
-          "type": "origins:on_block"
+          "type": "origins:resource",
+          "resource": "*:*_timer",
+          "comparison": "<",
+          "compare_to": 100
+        }
+      ]
+    }
+  },
+  "timer": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 120,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "timer_counter": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:on_block",
+        "inverted": true
+      },
+      "if_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_timer",
+        "operation": "add",
+        "change": 5
+      },
+      "else_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_timer",
+        "operation": "set",
+        "change": 0
+      }
+    }
+  },
+  "fake_gravity": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "set": true,
+      "y": -0.24
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": "==",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:swimming"
+        },
+        {
+          "type": "origins:block_collision",
+          "offset_x": 0,
+          "offset_y": -0.65,
+          "offset_z": 0,
+          "inverted": true
         }
       ]
     }
@@ -63,21 +127,14 @@
     }
   },
   "step-height": {
-    "type": "origins:action_over_time",
-    "interval": 5,
-    "entity_action": {
-      "type": "origins:if_else",
-      "condition": {
-        "type": "origins:swimming"
-      },
-      "if_action": {
-        "type": "origins:execute_command",
-        "command": "scale multiply pehkui:step_height 2"
-      },
-      "else_action": {
-        "type": "origins:execute_command",
-        "command": "scale reset"
-      }
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:step_height 2"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale reset pehkui:step_height"
     }
   },
   "splashy-slide": {
