@@ -56,13 +56,9 @@
     "type": "origins:action_over_time",
     "interval": 10,
     "entity_action": {
-      "type": "origins:delay",
-      "ticks": 30,
-      "action": {
-        "type": "origins:change_resource",
-        "resource": "*:*_fuelbar",
-        "change": -3
-      }
+      "type": "origins:change_resource",
+      "resource": "*:*_fuelbar",
+      "change": -2
     },
     "condition": {
       "type": "origins:block_in_radius",
@@ -99,7 +95,7 @@
       "change": -2
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:fluid_height",
