@@ -13,17 +13,6 @@
       "type": "origins:in_tag",
       "tag": "minecraft:base_stone_overworld"
     },
-    "phase_down_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:sneaking"
-        },
-        {
-          "type": "origins:on_block"
-        }
-      ]
-    },
     "exhaustion": {
       "type": "origins:exhaust",
       "interval": 20,
@@ -84,6 +73,24 @@
     "entity_action": {
       "type": "origins:execute_command",
       "command": "particle minecraft:soul ~ ~ ~ 5 5 5 0 10 normal"
+    }
+  },
+  "fast-swim-ground": {
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": 1.0
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": "==",
+          "compare_to": 0.0
+        }
+      ]
     }
   }
 }
