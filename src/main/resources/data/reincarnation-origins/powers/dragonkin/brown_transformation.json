@@ -22,10 +22,11 @@
   },
   "recharge": {
     "type": "origins:action_over_time",
+    "interval": 20,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_bar",
-      "change": 5
+      "change": 2
     },
     "condition": {
       "type": "origins:and",
@@ -42,15 +43,15 @@
           "compare_to": 5
         }
       ]
-    },
-    "interval": 20
+    }
   },
   "decharge": {
     "type": "origins:action_over_time",
+    "interval": 20,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_bar",
-      "change": -10
+      "change": -5
     },
     "condition": {
       "type": "origins:or",
@@ -71,8 +72,7 @@
           "type": "origins:exposed_to_sky"
         }
       ]
-    },
-    "interval": 20
+    }
   },
   "respawn": {
     "type": "origins:action_on_callback",

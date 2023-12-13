@@ -22,6 +22,7 @@
   },
   "recharge": {
     "type": "origins:action_over_time",
+    "interval": 20,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_bar",
@@ -29,19 +30,14 @@
     },
     "condition": {
       "type": "origins:on_fire"
-    },
-    "interval": 20
+    }
   },
   "decharge": {
     "type": "origins:action_over_time",
     "entity_action": {
-      "type": "origins:delay",
-      "ticks": 60,
-      "action": {
-        "type": "origins:change_resource",
-        "resource": "*:*_bar",
-        "change": -5
-      }
+      "type": "origins:change_resource",
+      "resource": "*:*_bar",
+      "change": -5
     },
     "condition": {
       "type": "origins:on_fire",
