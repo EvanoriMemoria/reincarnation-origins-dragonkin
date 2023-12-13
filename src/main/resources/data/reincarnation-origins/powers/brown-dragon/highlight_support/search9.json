@@ -6,7 +6,8 @@
       "type": "origins:block_in_radius",
       "block_condition": {
         "type": "origins:in_tag",
-        "tag": "reincarnation-origins:non_stone_blocks"
+        "tag": "minecraft:base_stone_overworld",
+        "inverted": true
       },
       "radius": 4,
       "shape": "cube",
