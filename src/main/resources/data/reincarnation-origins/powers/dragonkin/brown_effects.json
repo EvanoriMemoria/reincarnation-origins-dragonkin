@@ -1,66 +1,33 @@
 {
   "type": "origins:multiple",
-  "25_fall_damage": {
-    "type": "origins:modify_damage_taken",
-    "modifier": {
-      "name": "Take less fall damage",
-      "operation": "multiply_base_additive",
-      "value": -0.20
-    },
-    "damage_condition": {
-      "type": "origins:name",
-      "name": "fall"
-    },
-    "bientity_condition": {
-      "type": "origins:target_condition",
-      "condition": {
-        "type": "origins:resource",
-        "resource": "reincarnation-origins:dragonkin/brown_transformation_bar",
-        "comparison": ">=",
-        "compare_to": 25
-      }
+  "15_night_vision": {
+    "type": "origins:night_vision",
+    "strength": 0.15,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "reincarnation-origins:dragonkin/brown_transformation_bar",
+      "comparison": ">=",
+      "compare_to": 25
     }
   },
-  "50_fall_damage": {
-    "type": "origins:modify_damage_taken",
-    "modifier": {
-      "name": "Take less fall damage",
-      "operation": "multiply_base_additive",
-      "value": -0.35
-    },
-    "damage_condition": {
-      "type": "origins:name",
-      "name": "fall"
-    },
-    "bientity_condition": {
-      "type": "origins:target_condition",
-      "condition": {
-        "type": "origins:resource",
-        "resource": "reincarnation-origins:dragonkin/brown_transformation_bar",
-        "comparison": ">=",
-        "compare_to": 50
-      }
+  "35_night_vision": {
+    "type": "origins:night_vision",
+    "strength": 0.35,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "reincarnation-origins:dragonkin/brown_transformation_bar",
+      "comparison": ">=",
+      "compare_to": 50
     }
   },
-  "75_fall_damage": {
-    "type": "origins:modify_damage_taken",
-    "modifier": {
-      "name": "Take less fall damage",
-      "operation": "multiply_base_additive",
-      "value": -0.50
-    },
-    "damage_condition": {
-      "type": "origins:name",
-      "name": "fall"
-    },
-    "bientity_condition": {
-      "type": "origins:target_condition",
-      "condition": {
-        "type": "origins:resource",
-        "resource": "reincarnation-origins:dragonkin/brown_transformation_bar",
-        "comparison": ">=",
-        "compare_to": 75
-      }
+  "50_night_vision": {
+    "type": "origins:night_vision",
+    "strength": 0.5,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "reincarnation-origins:dragonkin/brown_transformation_bar",
+      "comparison": ">=",
+      "compare_to": 75
     }
   }
 }
