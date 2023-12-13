@@ -1,8 +1,10 @@
 {
 	"powers":[
     "reincarnation-origins:dragon-support/respawn",
+    "reincarnation-origins:red-dragon/air_cooled",
     "reincarnation-origins:red-dragon/flamethrower",
     "reincarnation-origins:red-dragon/fuel",
+    "reincarnation-origins:red-dragon/hot_skin",
     "reincarnation-origins:red-dragon/low_flight_stamina",
     "reincarnation-origins:red-dragon/master_of_lava",
     "reincarnation-origins:red-dragon/slow_swimmer",

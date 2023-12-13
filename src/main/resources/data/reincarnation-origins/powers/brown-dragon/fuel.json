@@ -35,7 +35,7 @@
             "type": "origins:in_tag",
             "tag": "minecraft:base_stone_overworld"
           },
-          "radius": 4,
+          "radius": 3,
           "shape": "cube",
           "comparison": ">=",
           "compare_to": 5
@@ -43,18 +43,5 @@
       ]
     },
     "interval": 10
-  },
-  "fuel_degen": {
-    "_comment": "Lose fuel while under the sky",
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_fuelbar",
-      "change": -2
-    },
-    "interval": 10,
-    "condition": {
-      "type": "origins:exposed_to_sky"
-    }
   }
 }

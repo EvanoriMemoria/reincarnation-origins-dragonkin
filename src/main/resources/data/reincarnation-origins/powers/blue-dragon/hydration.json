@@ -1,0 +1,41 @@
+{
+  "type": "origins:multiple",
+  "degen_out_of_water": {
+    "_comment": "lose fuel while out of water",
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "reincarnation-origins:blue-dragon/fuel_fuelbar",
+      "change": -1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": "==",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "sun_dried": {
+    "_comment": "lose fuel while in the sun",
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "reincarnation-origins:blue-dragon/fuel_fuelbar",
+      "change": -3
+    },
+    "condition": {
+      "type": "origins:exposed_to_sun"
+    }
+  }
+}
