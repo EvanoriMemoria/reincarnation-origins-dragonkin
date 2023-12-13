@@ -32,8 +32,10 @@
       "type": "origins:or",
       "conditions": [
         {
-          "type": "origins:submerged_in",
-          "fluid": "water"
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0
         },
         {
           "type": "origins:in_rain"
@@ -43,6 +45,7 @@
   },
   "fire_decharge": {
     "type": "origins:action_over_time",
+    "interval": 10,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_bar",
@@ -50,11 +53,11 @@
     },
     "condition": {
       "type": "origins:on_fire"
-    },
-    "interval": 10
+    }
   },
   "no_water_decharge": {
     "type": "origins:action_over_time",
+    "interval": 10,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_bar",
@@ -66,17 +69,15 @@
         {
           "type": "origins:fluid_height",
           "fluid": "minecraft:water",
-          "comparison": ">",
-          "compare_to": 0.0,
-          "inverted": true
+          "comparison": "==",
+          "compare_to": 0.0
         },
         {
           "type": "origins:in_rain",
           "inverted": true
         }
       ]
-    },
-    "interval": 10
+    }
   },
   "respawn": {
     "type": "origins:action_on_callback",
