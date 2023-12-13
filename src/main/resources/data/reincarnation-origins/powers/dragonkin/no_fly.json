@@ -1,5 +1,6 @@
 {
   "type": "origins:multiple",
+  "hidden": true,
   "no_fly": {
     "type": "origins:prevent_elytra_flight",
     "entity_action": {
@@ -7,18 +8,37 @@
       "command": "title @s actionbar {\"translate\":\"reincarnation-origins.dragonkin.error.too_tired\",\"color\":\"red\",\"bold\":true}"
     },
     "condition": {
-        "type": "origins:resource",
-        "resource": "*:*_cooldown",
-        "comparison": ">",
-        "compare_to": 0
+      "type": "origins:resource",
+      "resource": "*:*_cooldown",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+  "glide": {
+    "type": "origins:modify_falling",
+    "velocity": 0.24,
+    "take_fall_damage": false,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_cooldown",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:sneaking"
+        }
+      ]
     }
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 1200,
+    "cooldown": 400,
     "hud_render": {
       "should_render": true,
-      "bar_index": 3
+      "bar_index": 4
     }
   }
 }
