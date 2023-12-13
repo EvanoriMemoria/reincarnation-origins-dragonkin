@@ -1,9 +1,0 @@
-{
-	"powers": [
-		"reincarnation-origins:brown-dragon/highlight_support/remove"
-	],
-	"icon": "minecraft:barrier",
-	"order": -10,
-	"impact": 0,
-	"description": "you shouldn't see this in game, but it makes mining highlighted blocks not show the shulker used to highlight it. applied to everyone automatically on reload or on origin selection"
-}
