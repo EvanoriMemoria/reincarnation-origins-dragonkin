@@ -16,7 +16,7 @@
   },
   "glide": {
     "type": "origins:modify_falling",
-    "velocity": 0.24,
+    "velocity": 0.08,
     "take_fall_damage": false,
     "condition": {
       "type": "origins:and",
