@@ -69,7 +69,7 @@
         "type": "origins:change_resource",
         "resource": "*:*_stamina",
         "operation": "add",
-        "change": 5
+        "change": 20
       }
     }
   }
