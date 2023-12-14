@@ -1,6 +1,7 @@
 {
 	"powers":[
     "reincarnation-origins:dragon-support/respawn",
+    "reincarnation-origins:dragon-support/no_snacks_while_flying",
     "reincarnation-origins:dragon-support/swim_soundstop",
     "reincarnation-origins:blue-dragon/attributes",
     "reincarnation-origins:blue-dragon/fuel",
@@ -9,6 +10,7 @@
     "reincarnation-origins:blue-dragon/hydration",
     "reincarnation-origins:blue-dragon/leap",
     "reincarnation-origins:blue-dragon/low_flight_stamina",
+    "reincarnation-origins:blue-dragon/no_fly",
     "reincarnation-origins:blue-dragon/slide_on_land",
     "reincarnation-origins:blue-dragon/swimming_buffs",
     "reincarnation-origins:blue-dragon/water_breathing",

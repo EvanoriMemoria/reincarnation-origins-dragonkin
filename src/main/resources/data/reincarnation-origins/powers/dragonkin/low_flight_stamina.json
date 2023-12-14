@@ -11,28 +11,34 @@
       "type": "origins:fall_flying"
     }
   },
-  "no_food": {
-    "type": "origins:prevent_item_use",
-    "item_condition": {
-      "type": "origins:food"
-    },
-    "condition": {
-      "type": "origins:fall_flying"
-    }
-  },
   "stamina": {
     "type": "origins:resource",
     "_comment": "Maximum flight time in ticks",
     "min": 0,
-    "max": 160,
-    "start_value": 160,
+    "max": 300,
+    "start_value": 300,
     "min_action": {
-      "type": "origins:trigger_cooldown",
-      "power": "reincarnation-origins:dragonkin/no_fly_cooldown"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "reincarnation-origins:dragonkin/no_fly_cooldown"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"translate\":\"reincarnation-origins.dragonkin.error.too_tired\",\"color\":\"red\",\"bold\":true}"
+        }
+      ]
     },
     "hud_render": {
       "should_render": true,
-      "bar_index": 2
+      "bar_index": 2,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "reincarnation-origins:dragonkin/no_fly_cooldown",
+        "comparison": "==",
+        "compare_to": 0
+      }
     }
   },
   "stamina_counter": {

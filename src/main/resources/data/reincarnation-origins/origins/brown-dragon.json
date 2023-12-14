@@ -1,12 +1,14 @@
 {
   "powers": [
     "reincarnation-origins:dragon-support/respawn",
+    "reincarnation-origins:dragon-support/no_snacks_while_flying",
     "reincarnation-origins:dragon-support/swim_soundstop",
     "reincarnation-origins:brown-dragon/fuel",
     "reincarnation-origins:brown-dragon/ground_pound",
     "reincarnation-origins:brown-dragon/highlight_color",
     "reincarnation-origins:brown-dragon/low_flight_stamina",
     "reincarnation-origins:brown-dragon/night_vision",
+    "reincarnation-origins:brown-dragon/no_fly",
     "reincarnation-origins:brown-dragon/sink_in_water",
     "reincarnation-origins:brown-dragon/sky_degen",
     "reincarnation-origins:brown-dragon/swim",

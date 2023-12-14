@@ -5,7 +5,7 @@
     "type": "origins:prevent_elytra_flight",
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "title @s actionbar {\"translate\":\"reincarnation-origins.dragonkin.error.too_tired\",\"color\":\"red\",\"bold\":true}"
+      "command": "title @s actionbar {\"translate\":\"reincarnation-origins.dragonkin.error.too_tired\",\"color\":\"gold\",\"bold\":true}"
     },
     "condition": {
       "type": "origins:resource",

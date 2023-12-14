@@ -26,169 +26,56 @@
       ]
     }
   },
-  "no_food": {
-    "type": "origins:prevent_item_use",
-    "item_condition": {
-      "type": "origins:food"
-    },
-    "condition": {
-      "type": "origins:fall_flying"
-    }
-  },
-  "air_speed_25": {
-    "type": "origins:modify_air_speed",
-    "modifier": {
-      "operation": "multiply_base_additive",
-      "value": -0.25
-    },
-    "condition": {
+  "stamina": {
+    "type": "origins:resource",
+    "_comment": "Maximum flight time in ticks",
+    "min": 0,
+    "max": 200,
+    "start_value": 200,
+    "min_action": {
       "type": "origins:and",
-      "conditions": [
+      "actions": [
         {
-          "type": "origins:fall_flying"
+          "type": "origins:trigger_cooldown",
+          "power": "reincarnation-origins:brown-dragon/no_fly_cooldown"
         },
         {
-          "type": "origins:status_effect",
-          "effect": "minecraft:slowness",
-          "min_amplifier": 0
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"translate\":\"reincarnation-origins.dragonkin.error.too_tired\",\"color\":\"blue\",\"bold\":true}"
         }
       ]
-    }
-  },
-  "air_speed_50": {
-    "type": "origins:modify_air_speed",
-    "modifier": {
-      "operation": "multiply_base_additive",
-      "value": -0.50
     },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:fall_flying"
-        },
-        {
-          "type": "origins:status_effect",
-          "effect": "minecraft:slowness",
-          "min_amplifier": 1
-        }
-      ]
-    }
-  },
-  "air_speed_75": {
-    "type": "origins:modify_air_speed",
-    "modifier": {
-      "operation": "multiply_base_additive",
-      "value": -0.75
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:fall_flying"
-        },
-        {
-          "type": "origins:status_effect",
-          "effect": "minecraft:slowness",
-          "min_amplifier": 2
-        }
-      ]
-    }
-  },
-  "air_speed_100": {
-    "type": "origins:modify_air_speed",
-    "modifier": {
-      "operation": "multiply_base_additive",
-      "value": -1.00
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:fall_flying"
-        },
-        {
-          "type": "origins:status_effect",
-          "effect": "minecraft:slowness",
-          "min_amplifier": 3
-        }
-      ]
-    }
-  },
-  "slowness": {
-    "type": "origins:stacking_status_effect",
-    "min_stacks": 1,
-    "max_stacks": 1,
-    "duration_per_stack": 40,
-    "tick_rate": 20,
-    "effects": [
-      {
-        "effect": "minecraft:slowness",
-        "amplifier": 0,
-        "is_ambient": true,
-        "show_particles": false,
-        "show_icon": true
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 2,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "reincarnation-origins:brown-dragon/no_fly_cooldown",
+        "comparison": "==",
+        "compare_to": 0
       }
-    ],
-    "condition": {
-      "type": "origins:fall_flying"
     }
   },
-  "slowness_two": {
-    "type": "origins:stacking_status_effect",
-    "min_stacks": -9,
-    "max_stacks": 1,
-    "duration_per_stack": 40,
-    "tick_rate": 20,
-    "effects": [
-      {
-        "effect": "minecraft:slowness",
-        "amplifier": 1,
-        "is_ambient": true,
-        "show_particles": false,
-        "show_icon": true
+  "stamina_counter": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:fall_flying"
+      },
+      "if_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_stamina",
+        "operation": "add",
+        "change": -5
+      },
+      "else_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_stamina",
+        "operation": "add",
+        "change": 5
       }
-    ],
-    "condition": {
-      "type": "origins:fall_flying"
-    }
-  },
-  "slowness_three": {
-    "type": "origins:stacking_status_effect",
-    "min_stacks": -14,
-    "max_stacks": 1,
-    "duration_per_stack": 40,
-    "tick_rate": 20,
-    "effects": [
-      {
-        "effect": "minecraft:slowness",
-        "amplifier": 2,
-        "is_ambient": true,
-        "show_particles": false,
-        "show_icon": true
-      }
-    ],
-    "condition": {
-      "type": "origins:fall_flying"
-    }
-  },
-  "slowness_four": {
-    "type": "origins:stacking_status_effect",
-    "min_stacks": -19,
-    "max_stacks": 1,
-    "duration_per_stack": 40,
-    "tick_rate": 20,
-    "effects": [
-      {
-        "effect": "minecraft:slowness",
-        "amplifier": 3,
-        "is_ambient": true,
-        "show_particles": false,
-        "show_icon": true
-      }
-    ],
-    "condition": {
-      "type": "origins:fall_flying"
     }
   }
 }
