@@ -1,0 +1,99 @@
+{
+  "type": "origins:multiple",
+  "blue": {
+    "type": "origins:cooldown",
+    "cooldown": 6000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 20,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "reincarnation-origins:dragonkin"
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_blue",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      }
+    }
+  },
+  "brown": {
+    "type": "origins:cooldown",
+    "cooldown": 6000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 21,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "reincarnation-origins:dragonkin"
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_brown",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      }
+    }
+  },
+  "red": {
+    "type": "origins:cooldown",
+    "cooldown": 6000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 23,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "reincarnation-origins:dragonkin"
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_red",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      }
+    }
+  },
+  "white": {
+    "type": "origins:cooldown",
+    "cooldown": 6000,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 9,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "reincarnation-origins:dragonkin"
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_white",
+            "comparison": ">",
+            "compare_to": 0
+          }
+        ]
+      }
+    }
+  }
+}

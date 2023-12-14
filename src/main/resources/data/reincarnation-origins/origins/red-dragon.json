@@ -2,6 +2,7 @@
 	"powers":[
     "reincarnation-origins:dragon-support/respawn",
     "reincarnation-origins:dragon-support/no_snacks_while_flying",
+    "reincarnation-origins:dragon-support/transformation_cooldown",
     "reincarnation-origins:red-dragon/air_cooled",
     "reincarnation-origins:red-dragon/flamethrower",
     "reincarnation-origins:red-dragon/fuel",

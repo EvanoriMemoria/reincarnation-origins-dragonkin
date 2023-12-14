@@ -2,6 +2,7 @@
 	"powers":[
 		"reincarnation-origins:dragon-support/respawn",
 		"reincarnation-origins:dragon-support/no_snacks_while_flying",
+		"reincarnation-origins:dragon-support/transformation_cooldown",
 		"reincarnation-origins:white-dragon/boost",
 		"reincarnation-origins:white-dragon/callbacks",
     "reincarnation-origins:white-dragon/cyclone",

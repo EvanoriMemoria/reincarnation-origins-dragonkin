@@ -6,8 +6,25 @@
     "max": 100,
     "start_value": 50,
     "min_action": {
-      "type": "origins:execute_command",
-      "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function reincarnation-origins:dragonkin/transform_into_dragonkin"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 5,
+          "action": {
+            "type": "origins:trigger_cooldown",
+            "power": "reincarnation-origins:dragon-support/transformation_cooldown_red"
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tellraw @s {\"translate\":\"reincarnation-origins.dragonkin.error.fire_magic_overload\""
+        }
+      ]
     },
     "hud_render": {
       "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",

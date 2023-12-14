@@ -85,5 +85,9 @@
   "reincarnation-origins.dragonkin.error.not_enough_fuel": "Not enough fuel!",
   "reincarnation-origins.blue-dragon.error.no_water": "You must be in water!",
   "reincarnation-origins.white-dragon.error.no_sky": "You are not under the sky.",
-  "reincarnation-origins.dragonkin.error.too_tired": "You are too tired to fly. Press shift to glide."
+  "reincarnation-origins.dragonkin.error.too_tired": "You are too tired to fly! Sneak to fall faster.",
+  "reincarnation-origins.dragonkin.error.water_magic_overload": "You've completely diminished your Water Magic stores! You cannot accumulate Water Magic for some time.",
+  "reincarnation-origins.dragonkin.error.stone_magic_overload": "You've completely diminished your Stone Magic stores! You cannot accumulate Stone Magic for some time.",
+  "reincarnation-origins.dragonkin.error.fire_magic_overload": "You've completely diminished your Fire Magic stores! You cannot accumulate Fire Magic for some time.",
+  "reincarnation-origins.dragonkin.error.air_magic_overload": "You've completely diminished your Air Magic stores! You cannot accumulate Air Magic for some time."
 }
