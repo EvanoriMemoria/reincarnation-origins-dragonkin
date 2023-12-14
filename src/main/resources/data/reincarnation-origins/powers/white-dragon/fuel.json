@@ -3,7 +3,8 @@
   "fuelbar": {
     "type": "origins:resource",
     "min": 0,
-    "max": 32,
+    "max": 100,
+    "start_value": 50,
     "min_action": {
       "type": "origins:and",
       "actions": [
@@ -35,7 +36,7 @@
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
-      "resource": "*:*_bar",
+      "resource": "*:*_fuelbar",
       "change": 5
     },
     "condition": {
@@ -62,8 +63,8 @@
     "type": "origins:action_over_time",
     "entity_action": {
         "type": "origins:change_resource",
-        "resource": "*:*_bar",
-        "change": -6
+        "resource": "*:*_fuelbar",
+        "change": -5
     },
     "condition": {
       "type": "origins:exposed_to_sky",
@@ -76,7 +77,7 @@
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
-      "resource": "*:*_bar",
+      "resource": "*:*_fuelbar",
       "change": -6
     },
     "condition": {
