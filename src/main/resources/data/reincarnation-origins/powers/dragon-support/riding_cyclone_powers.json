@@ -27,7 +27,7 @@
   },
   "glide": {
     "type": "origins:modify_falling",
-    "velocity": 0.01,
+    "velocity": 0.02,
     "take_fall_damage": false
   },
   "kill_on_dismount": {
@@ -51,20 +51,80 @@
       ]
     },
     "condition": {
-      "type": "origins:passenger",
-      "comparison": "==",
-      "compare_to": "0",
-      "bientity_condition": {
-        "type": "origins:actor_condition",
-        "condition": {
-          "type": "origins:entity_type",
-          "entity_type": "minecraft:player"
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:passenger",
+          "comparison": "==",
+          "compare_to": "0",
+          "bientity_condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:player"
+            }
+          }
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:lava",
+          "comparison": ">",
+          "compare_to": 0.4
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.4
         }
-      }
+      ]
     }
   },
   "invisible": {
     "type": "origins:invisibility",
     "render_armor": false
+  },
+  "float_over_lava": {
+    "type": "origins:walk_on_fluid",
+    "fluid": "minecraft:lava",
+    "condition": {
+      "type": "origins:fluid_height",
+      "fluid": "minecraft:lava",
+      "comparison": "<=",
+      "compare_to": 0.4
+    }
+  },
+  "float_over_water": {
+    "type": "origins:walk_on_fluid",
+    "fluid": "minecraft:water",
+    "condition": {
+      "type": "origins:fluid_height",
+      "fluid": "minecraft:water",
+      "comparison": "<=",
+      "compare_to": 0.4
+    }
+  },
+  "magic_drain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "resource change @p reincarnation-origins:white-dragon/fuel_fuelbar -1"
+    },
+    "condition": {
+      "type": "origins:moving",
+      "inverted": true
+    }
+  },
+  "magic_drain_moving": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "resource change @p reincarnation-origins:white-dragon/fuel_fuelbar -4"
+    },
+    "condition": {
+      "type": "origins:moving"
+    }
   }
 }
