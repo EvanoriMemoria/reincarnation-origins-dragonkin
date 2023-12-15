@@ -1,65 +1,130 @@
 {
   "description": "Added to the cyclone entity, not the player",
-  "type": "origins:action_over_time",
-  "hidden": true,
-  "interval": 5,
-  "entity_action": {
-    "type": "origins:and",
-    "actions": [
-      {
-        "type": "origins:execute_command",
-        "command": "particle poof ~ ~ ~ 0.1 0.5 0.1 0.1 50 force"
-      },
-      {
-        "type": "origins:execute_command",
-        "command": "particle splash ~ ~ ~ 0.1 0.5 0.1 0.1 5 force"
-      },
-      {
-        "type": "origins:execute_command",
-        "command": "playsound minecraft:block.bubble_column.whirlpool_inside player @a"
-      },
-      {
-        "type": "origins:execute_command",
-        "command": "playsound minecraft:block.wool.place player @a"
-      },
-      {
-        "type": "origins:add_velocity",
-        "z": 0.5,
-        "space": "local",
-        "client": true,
-        "server": true
-      },
-      {
-        "type": "origins:if_else",
-        "condition": {
-          "type": "origins:on_block"
+  "type": "origins:multiple",
+  "lifetime": {
+    "type": "origins:action_over_time",
+    "hidden": true,
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle poof ~ ~ ~ 0.1 0.5 0.1 0.1 50 force"
         },
-        "if_action": {
+        {
+          "type": "origins:execute_command",
+          "command": "particle splash ~ ~ ~ 0.1 0.5 0.1 0.1 5 force"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:block.bubble_column.whirlpool_inside player @a"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:block.wool.place player @a"
+        },
+        {
           "type": "origins:add_velocity",
-          "y": 0.5,
-          "space": "world",
+          "z": 0.5,
+          "space": "local",
           "client": true,
           "server": true
         },
-        "else_action": {
-          "type": "origins:add_velocity",
-          "y": -0.4,
-          "space": "world",
-          "client": true,
-          "server": true
-        }
-      },
-      {
-        "type": "origins:area_of_effect",
-        "radius": 4.5,
-        "bientity_action": {
-          "type": "origins:target_action",
-          "action": {
-            "type": "origins:execute_command",
-            "command": "tp @s[type=!player] @e[sort=nearest, type=armor_stand, limit=1]"
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:on_block"
+          },
+          "if_action": {
+            "type": "origins:add_velocity",
+            "y": 0.5,
+            "space": "world",
+            "client": true,
+            "server": true
+          },
+          "else_action": {
+            "type": "origins:add_velocity",
+            "y": -0.4,
+            "space": "world",
+            "client": true,
+            "server": true
+          }
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 4.5,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "tp @s[type=!player] @e[sort=nearest, type=armor_stand, limit=1]"
+            }
           }
         }
-      }
-    ]
+      ]
+    }
+  },
+  "float_over_lava": {
+    "type": "origins:walk_on_fluid",
+    "fluid": "minecraft:lava",
+    "condition": {
+      "type": "origins:fluid_height",
+      "fluid": "minecraft:lava",
+      "comparison": "<=",
+      "compare_to": 0.4
+    }
+  },
+  "float_over_water": {
+    "type": "origins:walk_on_fluid",
+    "fluid": "minecraft:water",
+    "condition": {
+      "type": "origins:fluid_height",
+      "fluid": "minecraft:water",
+      "comparison": "<=",
+      "compare_to": 0.4
+    }
+  },
+  "kill_in_liquids": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle poof ~ ~ ~ 1 1 1 0.4 50 force"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tp @s ~ ~-200 ~"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 2,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "kill @s"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:lava",
+          "comparison": ">",
+          "compare_to": 0.4
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.4
+        }
+      ]
+    }
   }
 }
