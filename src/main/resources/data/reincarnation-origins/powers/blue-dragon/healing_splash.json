@@ -1,23 +1,5 @@
 {
   "type": "origins:multiple",
-  "fuel_error": {
-    "type": "origins:active_self",
-    "key": {
-      "key": "key.origins.primary_active",
-      "continuous": true
-    },
-    "cooldown": 5,
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "title @s actionbar {\"translate\":\"reincarnation-origins.dragonkin.error.not_enough_fuel\",\"color\":\"blue\",\"bold\":true}"
-    },
-    "condition": {
-      "type": "origins:resource",
-      "resource": "reincarnation-origins:blue-dragon/fuel_fuelbar",
-      "comparison": "<",
-      "compare_to": 10
-    }
-  },
   "water_thrower": {
     "type": "origins:active_self",
     "key": {
@@ -102,12 +84,6 @@
     "cooldown": 5,
     "hud_render": {
       "should_render": false
-    },
-    "condition": {
-      "type": "origins:resource",
-      "resource": "reincarnation-origins:blue-dragon/fuel_fuelbar",
-      "comparison": ">=",
-      "compare_to": 10
     }
   }
 }
