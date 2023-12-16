@@ -15,14 +15,12 @@
       }
     }
   },
-
   "immunity": {
     "type": "origins:invulnerability",
     "damage_condition": {
       "type": "origins:fire"
     }
   },
-
   "swim": {
     "type": "origins:swimming",
     "condition": {
@@ -30,13 +28,11 @@
       "fluid": "lava"
     }
   },
-
   "sight": {
     "type": "origins:lava_vision",
     "s": 0,
     "v": 40
   },
-
   "movement_speed": {
     "type": "origins:modify_lava_speed",
     "modifier": {
