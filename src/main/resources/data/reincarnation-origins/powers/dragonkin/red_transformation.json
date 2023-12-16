@@ -29,7 +29,18 @@
       "change": 5
     },
     "condition": {
-      "type": "origins:on_fire"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "reincarnation-origins:dragon-support/transformation_cooldowns_red",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:on_fire"
+        }
+      ]
     }
   },
   "decharge": {

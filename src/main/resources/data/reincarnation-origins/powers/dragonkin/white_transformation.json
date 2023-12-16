@@ -42,6 +42,12 @@
         {
           "type": "origins:on_fire",
           "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "reincarnation-origins:dragon-support/transformation_cooldowns_white",
+          "comparison": "==",
+          "compare_to": 0
         }
       ]
     }
@@ -50,9 +56,9 @@
     "type": "origins:action_over_time",
     "interval": 20,
     "entity_action": {
-        "type": "origins:change_resource",
-        "resource": "*:*_bar",
-        "change": -5
+      "type": "origins:change_resource",
+      "resource": "*:*_bar",
+      "change": -5
     },
     "condition": {
       "type": "origins:exposed_to_sky",
