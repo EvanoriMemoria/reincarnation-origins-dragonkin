@@ -4,6 +4,7 @@
     "reincarnation-origins:dragon-support/no_snacks_while_flying",
     "reincarnation-origins:dragon-support/transformation_cooldown",
     "reincarnation-origins:red-dragon/air_cooled",
+    "reincarnation-origins:red-dragon/boost_jump",
     "reincarnation-origins:red-dragon/flamethrower",
     "reincarnation-origins:red-dragon/fuel",
     "reincarnation-origins:red-dragon/hot_skin",
@@ -16,7 +17,7 @@
 	],
 	"icon": "minecraft:fire_coral",
 	"impact": 3,
-	"name": "Red Dragon",
+	"name": "Red Dragonkin",
 	"description": "A descendant of the Red Dragons. You have an affinity for fire.",
   "unchoosable": true
 }
