@@ -8,45 +8,19 @@
           "type": "origins:equipped_item",
           "equipment_slot": "mainhand",
           "item_condition": {
-            "type": "origins:fuel",
-            "comparison": "<=",
-            "compare_to": 300
-          }
-        },
-        "action": {
-          "type": "origins:and",
-          "actions": [
-            {
-              "type": "origins:equipped_item_action",
-              "equipment_slot": "mainhand",
-              "action": {
-                "type": "origins:consume",
-                "amount": 1
-              }
-            },
-            {
-              "type": "origins:trigger_cooldown",
-              "power": "reincarnation-origins:red-dragon/regen_5_timer"
-            }
-          ]
-        }
-      },
-      {
-        "condition": {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:and",
+            "type": "origins:or",
             "conditions": [
               {
-                "type": "origins:fuel",
-                "comparison": ">",
-                "compare_to": 300
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:coal"
+                }
               },
               {
-                "type": "origins:fuel",
-                "comparison": "<=",
-                "compare_to": 1200
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:charcoal"
+                }
               }
             ]
           }
@@ -63,8 +37,8 @@
               }
             },
             {
-              "type": "origins:trigger_cooldown",
-              "power": "reincarnation-origins:red-dragon/regen_15_timer"
+              "type": "origins:set_on_fire",
+              "duration": 13
             }
           ]
         }
@@ -74,17 +48,19 @@
           "type": "origins:equipped_item",
           "equipment_slot": "mainhand",
           "item_condition": {
-            "type": "origins:and",
+            "type": "origins:or",
             "conditions": [
               {
-                "type": "origins:fuel",
-                "comparison": ">",
-                "compare_to": 1200
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:coal_block"
+                }
               },
               {
-                "type": "origins:fuel",
-                "comparison": "<=",
-                "compare_to": 1600
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:lava_bucket"
+                }
               }
             ]
           }
@@ -101,74 +77,8 @@
               }
             },
             {
-              "type": "origins:trigger_cooldown",
-              "power": "reincarnation-origins:red-dragon/regen_20_timer"
-            }
-          ]
-        }
-      },
-      {
-        "condition": {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:fuel",
-                "comparison": ">",
-                "compare_to": 1600
-              },
-              {
-                "type": "origins:fuel",
-                "comparison": "<=",
-                "compare_to": 4000
-              }
-            ]
-          }
-        },
-        "action": {
-          "type": "origins:and",
-          "actions": [
-            {
-              "type": "origins:equipped_item_action",
-              "equipment_slot": "mainhand",
-              "action": {
-                "type": "origins:consume",
-                "amount": 1
-              }
-            },
-            {
-              "type": "origins:trigger_cooldown",
-              "power": "reincarnation-origins:red-dragon/regen_25_timer"
-            }
-          ]
-        }
-      },
-      {
-        "condition": {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:fuel",
-            "comparison": ">",
-            "compare_to": 4000
-          }
-        },
-        "action": {
-          "type": "origins:and",
-          "actions": [
-            {
-              "type": "origins:equipped_item_action",
-              "equipment_slot": "mainhand",
-              "action": {
-                "type": "origins:consume",
-                "amount": 1
-              }
-            },
-            {
-              "type": "origins:trigger_cooldown",
-              "power": "reincarnation-origins:red-dragon/regen_100_timer"
+              "type": "origins:set_on_fire",
+              "duration": 50
             }
           ]
         }
