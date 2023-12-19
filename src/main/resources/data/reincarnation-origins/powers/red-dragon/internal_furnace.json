@@ -1,0 +1,203 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:if_else_list",
+    "actions": [
+      {
+        "condition": {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:fuel",
+            "comparison": "<=",
+            "compare_to": 300
+          }
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:equipped_item_action",
+              "equipment_slot": "mainhand",
+              "action": {
+                "type": "origins:consume",
+                "amount": 1
+              }
+            },
+            {
+              "type": "origins:trigger_cooldown",
+              "power": "reincarnation-origins:red-dragon/regen_5_timer"
+            }
+          ]
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:fuel",
+                "comparison": ">",
+                "compare_to": 300
+              },
+              {
+                "type": "origins:fuel",
+                "comparison": "<=",
+                "compare_to": 1200
+              }
+            ]
+          }
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:equipped_item_action",
+              "equipment_slot": "mainhand",
+              "action": {
+                "type": "origins:consume",
+                "amount": 1
+              }
+            },
+            {
+              "type": "origins:trigger_cooldown",
+              "power": "reincarnation-origins:red-dragon/regen_15_timer"
+            }
+          ]
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:fuel",
+                "comparison": ">",
+                "compare_to": 1200
+              },
+              {
+                "type": "origins:fuel",
+                "comparison": "<=",
+                "compare_to": 1600
+              }
+            ]
+          }
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:equipped_item_action",
+              "equipment_slot": "mainhand",
+              "action": {
+                "type": "origins:consume",
+                "amount": 1
+              }
+            },
+            {
+              "type": "origins:trigger_cooldown",
+              "power": "reincarnation-origins:red-dragon/regen_20_timer"
+            }
+          ]
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:fuel",
+                "comparison": ">",
+                "compare_to": 1600
+              },
+              {
+                "type": "origins:fuel",
+                "comparison": "<=",
+                "compare_to": 4000
+              }
+            ]
+          }
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:equipped_item_action",
+              "equipment_slot": "mainhand",
+              "action": {
+                "type": "origins:consume",
+                "amount": 1
+              }
+            },
+            {
+              "type": "origins:trigger_cooldown",
+              "power": "reincarnation-origins:red-dragon/regen_25_timer"
+            }
+          ]
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:fuel",
+            "comparison": ">",
+            "compare_to": 4000
+          }
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:equipped_item_action",
+              "equipment_slot": "mainhand",
+              "action": {
+                "type": "origins:consume",
+                "amount": 1
+              }
+            },
+            {
+              "type": "origins:trigger_cooldown",
+              "power": "reincarnation-origins:red-dragon/regen_100_timer"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "cooldown": 10,
+  "hud_render": {
+    "should_render": false
+  },
+  "key": {
+    "key": "key.use",
+    "continuous": true
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+          "type": "origins:fuel",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      },
+      {
+        "type": "origins:sneaking"
+      }
+    ]
+  }
+}
