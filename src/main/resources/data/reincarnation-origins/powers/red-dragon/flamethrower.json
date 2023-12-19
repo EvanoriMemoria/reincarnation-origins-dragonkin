@@ -13,11 +13,11 @@
         "actions": [
           {
             "type": "origins:execute_command",
-            "command": "data merge block ~ ~ ~1 {BurnTime:6400}"
+            "command": "data merge block ~ ~ ~ {BurnTime:6400}"
           },
           {
             "type": "origins:execute_command",
-            "command": "fill ~-2 ~ ~ ~2 ~2 ~ minecraft:fire replace minecraft:air"
+            "command": "fill ~ ~ ~ ~ ~1 ~2 minecraft:fire replace minecraft:air"
           }
         ]
       },
