@@ -45,7 +45,7 @@
         },
         {
           "type": "origins:resource",
-          "resource": "reincarnation-origins:dragon-support/transformation_cooldowns_white",
+          "resource": "reincarnation-origins:dragon-support/transformation_cooldown_white",
           "comparison": "==",
           "compare_to": 0
         }

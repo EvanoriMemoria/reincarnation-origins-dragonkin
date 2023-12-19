@@ -47,7 +47,7 @@
         },
         {
           "type": "origins:resource",
-          "resource": "reincarnation-origins:dragon-support/transformation_cooldowns_blue",
+          "resource": "reincarnation-origins:dragon-support/transformation_cooldown_blue",
           "comparison": "==",
           "compare_to": 0
         }
@@ -68,11 +68,11 @@
   },
   "no_water_decharge": {
     "type": "origins:action_over_time",
-    "interval": 10,
+    "interval": 20,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_bar",
-      "change": -5
+      "change": -2
     },
     "condition": {
       "type": "origins:and",

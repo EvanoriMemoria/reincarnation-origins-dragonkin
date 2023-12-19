@@ -33,7 +33,7 @@
       "conditions": [
         {
           "type": "origins:resource",
-          "resource": "reincarnation-origins:dragon-support/transformation_cooldowns_red",
+          "resource": "reincarnation-origins:dragon-support/transformation_cooldown_red",
           "comparison": "==",
           "compare_to": 0
         },
