@@ -5,9 +5,19 @@
     "condition": {
       "type": "origins:block_in_radius",
       "block_condition": {
-        "type": "origins:in_tag",
-        "tag": "minecraft:base_stone_overworld",
-        "inverted": true
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:in_tag",
+            "tag": "minecraft:base_stone_overworld",
+            "inverted": true
+          },
+          {
+            "type": "origins:in_tag",
+            "tag": "reincarnation-origins:no_highlight",
+            "inverted": true
+          }
+        ]
       },
       "radius": 4,
       "shape": "cube",

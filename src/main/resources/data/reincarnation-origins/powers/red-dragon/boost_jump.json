@@ -9,7 +9,8 @@
       "actions": [
         {
           "type": "origins:add_velocity",
-          "y": 0.5
+          "y": 0.5,
+          "set": true
         },
         {
           "type": "origins:execute_command",
@@ -37,11 +38,19 @@
         {
           "type": "origins:resource",
           "resource": "*:*_jump_counter",
-          "comparison": "<=",
+          "comparison": "<",
           "compare_to": 2
         },
         {
           "type": "origins:on_block",
+          "inverted": true
+        },
+        {
+          "type": "origins:swimming",
+          "inverted": true
+        },
+        {
+          "type": "origins:fall_flying",
           "inverted": true
         }
       ]
@@ -72,7 +81,7 @@
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_jump_counter",
-      "comparison": "<=",
+      "comparison": "<",
       "compare_to": 2
     }
   }

@@ -17,6 +17,12 @@
         {
           "type": "origins:riding",
           "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_ride_cyclone",
+          "comparison": "==",
+          "compare_to": 0
         }
       ]
     },
@@ -41,7 +47,7 @@
                     },
                     {
                       "type": "origins:execute_command",
-                      "command": "playsound minecraft:block.bubble_column.whirlpool_inside ambient @a"
+                      "command": "playsound minecraft:block.wool.place player @a"
                     },
                     {
                       "type": "origins:add_velocity",
@@ -164,6 +170,12 @@
         {
           "type": "origins:riding",
           "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_throw_cyclone",
+          "comparison": "==",
+          "compare_to": 0
         }
       ]
     },

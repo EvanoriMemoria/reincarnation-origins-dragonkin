@@ -21,6 +21,25 @@
         "type": "origins:power_active",
         "power": "reincarnation-origins:brown-dragon/swim_toggle"
       }
+    },
+    "phase_down_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:sneaking"
+            },
+            {
+              "type": "origins:on_block"
+            }
+          ]
+        },
+        {
+          "type": "origins:swimming"
+        }
+      ]
     }
   },
   "stone_swim": {
