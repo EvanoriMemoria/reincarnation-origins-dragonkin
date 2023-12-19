@@ -68,44 +68,10 @@
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_fuelbar",
-      "change": 2
-    },
-    "condition": {
-      "type": "origins:on_fire"
-    }
-  },
-  "fuel_regen_advancement": {
-    "_comment": "Generate fuel after completing the breath advancement",
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_fuelbar",
       "change": 1
     },
     "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:advancement",
-          "advancement": "reincarnation-origins:red-dragon/breath"
-        },
-        {
-          "type": "origins:fluid_height",
-          "fluid": "minecraft:water",
-          "comparison": ">",
-          "compare_to": 0.0,
-          "inverted": true
-        },
-        {
-          "type": "origins:in_rain",
-          "inverted": true
-        },
-        {
-          "type": "origins:fall_flying",
-          "inverted": true
-        }
-      ]
+      "type": "origins:on_fire"
     }
   }
 }
