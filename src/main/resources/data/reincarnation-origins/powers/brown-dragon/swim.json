@@ -13,15 +13,6 @@
       "type": "origins:in_tag",
       "tag": "minecraft:base_stone_overworld"
     },
-    "exhaustion": {
-      "type": "origins:exhaust",
-      "interval": 20,
-      "exhaustion": 1.2,
-      "condition": {
-        "type": "origins:power_active",
-        "power": "reincarnation-origins:brown-dragon/swim_toggle"
-      }
-    },
     "phase_down_condition": {
       "type": "origins:or",
       "conditions": [
@@ -42,6 +33,15 @@
       ]
     }
   },
+  "exhaustion": {
+    "type": "origins:exhaust",
+    "interval": 20,
+    "exhaustion": 1.2,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "reincarnation-origins:brown-dragon/swim_toggle"
+    }
+  },
   "stone_swim": {
     "type": "origins:swimming",
     "condition": {
@@ -58,7 +58,7 @@
           "type": "origins:in_block",
           "block_condition": {
             "type": "origins:in_tag",
-            "tag": "minecraft:base_stone_overworld"
+            "tag": "reincarnation-origins:expanded_dig"
           }
         }
       ]
@@ -111,5 +111,16 @@
         }
       ]
     }
+  },
+  "no_suffocation": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "inWall"
+    }
+  },
+  "condition": {
+    "type": "origins:power_active",
+    "power": "reincarnation-origins:brown-dragon/swim_toggle"
   }
 }
