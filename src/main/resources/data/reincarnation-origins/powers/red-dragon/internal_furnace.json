@@ -85,7 +85,7 @@
       }
     ]
   },
-  "cooldown": 10,
+  "cooldown": 20,
   "hud_render": {
     "should_render": false
   },
@@ -94,20 +94,6 @@
     "continuous": true
   },
   "condition": {
-    "type": "origins:and",
-    "conditions": [
-      {
-        "type": "origins:equipped_item",
-        "equipment_slot": "mainhand",
-        "item_condition": {
-          "type": "origins:fuel",
-          "comparison": ">",
-          "compare_to": 0
-        }
-      },
-      {
-        "type": "origins:sneaking"
-      }
-    ]
+    "type": "origins:sneaking"
   }
 }
