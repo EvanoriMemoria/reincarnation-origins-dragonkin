@@ -30,6 +30,13 @@
     "velocity": 0.02,
     "take_fall_damage": false
   },
+  "air_speed": {
+      "type": "origins:modify_air_speed",
+      "modifier": {
+          "operation": "set_base",
+          "value": 0.4
+      }
+  },
   "kill_on_dismount": {
     "type": "origins:action_over_time",
     "interval": 5,
