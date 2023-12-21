@@ -9,6 +9,8 @@
   "power.reincarnation-origins.dragonkin/red_effects.description": "Absorb magic from fire, lava, and hot blocks. When full, gain the powers of your Red Dragon ancestors",
   "power.reincarnation-origins.dragonkin/white_effects.name": "Air Affinity",
   "power.reincarnation-origins.dragonkin/white_effects.description": "Absorb magic from the open sky. When full, gain the powers of your White Dragon ancestors",
+  "power.reincarnation-origins.dragon-support/transformation_cooldown_description.name": "Elementally Drained",
+  "power.reincarnation-origins.dragon-support/transformation_cooldown_description.description": "If you run out of Elemental Magic you will revert to Dragonkin form and not be able to return to this form for some time.",
 
   "power.reincarnation-origins.blue-dragon/attributes.name": "Calcified",
   "power.reincarnation-origins.blue-dragon/attributes.description": "You become tougher while underwater.",
@@ -35,6 +37,8 @@
   "power.reincarnation-origins.blue-dragon/wings.name": "Blue Dragon's Flippers",
   "power.reincarnation-origins.blue-dragon/wings.description": "While you *can* fly with these, they're much more helpful for swimming.",
 
+  "power.reincarnation-origins.brown-dragon/dig_burst.name": "Dig Boost",
+  "power.reincarnation-origins.brown-dragon/dig_burst.description": "Use some of your Magic to boost yourself and temporarily move through an expanded variety of blocks. Only available while Wurm Tunneling.",
   "power.reincarnation-origins.brown-dragon/fuel.name": "Stone Magic",
   "power.reincarnation-origins.brown-dragon/fuel.description": "Refill your Rock (and Stone!) magic when in caves and around rocks.",
   "power.reincarnation-origins.brown-dragon/ground_pound.name": "Stomp",
@@ -74,11 +78,11 @@
   "power.reincarnation-origins.red-dragon/slow_swimmer.description": "You're a slow swimmer.",
   "power.reincarnation-origins.red-dragon/water_vulnerability.name": "Water Allergy",
   "power.reincarnation-origins.red-dragon/water_vulnerability.description": "If your head goes under water you start taking damage.",
-  
+
   "power.reincarnation-origins.white-dragon/boost.name": "Propelled Launch",
   "power.reincarnation-origins.white-dragon/boost.description": "Propel yourself forward with a burst of air.",
   "power.reincarnation-origins.white-dragon/cyclone.name": "Cyclone",
-  "power.reincarnation-origins.white-dragon/cyclone.description": "Shoot a cyclone forward that sucks in nearby entities.",
+  "power.reincarnation-origins.white-dragon/cyclone.description": "[Shift + Activate] to shoot a cyclone forward that sucks in nearby entities. Activate to ride a ball of air around!",
   "power.reincarnation-origins.white-dragon/float.name": "Buoyant",
   "power.reincarnation-origins.white-dragon/float.description": "You can't swim, you just float.",
   "power.reincarnation-origins.white-dragon/fuel.name": "Air Magic",
