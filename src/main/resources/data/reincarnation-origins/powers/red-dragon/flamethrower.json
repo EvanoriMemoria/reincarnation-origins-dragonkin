@@ -17,7 +17,7 @@
           },
           {
             "type": "origins:execute_command",
-            "command": "fill ~ ~ ~ ~ ~1 ~2 minecraft:fire replace minecraft:air"
+            "command": "fill ~ ~ ~ ~ ~1 ~ minecraft:fire replace minecraft:air"
           }
         ]
       },
