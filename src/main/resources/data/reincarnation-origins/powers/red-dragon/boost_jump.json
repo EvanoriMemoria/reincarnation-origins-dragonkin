@@ -81,7 +81,7 @@
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_jump_counter",
-      "comparison": "<",
+      "comparison": "<=",
       "compare_to": 2
     }
   }
