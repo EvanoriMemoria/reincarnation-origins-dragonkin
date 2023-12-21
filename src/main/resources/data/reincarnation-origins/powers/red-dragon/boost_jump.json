@@ -18,16 +18,16 @@
         },
         {
           "type": "origins:exhaust",
-          "amount": 0.2
+          "amount": 0.1
         },
         {
           "type": "origins:change_resource",
           "resource": "reincarnation-origins:red-dragon/fuel_fuelbar",
-          "change": -5
+          "change": -1
         },
         {
           "type": "origins:change_resource",
-          "resource": ":*_jump_counter",
+          "resource": "*:*_jump_counter",
           "change": 1
         }
       ]
@@ -67,7 +67,7 @@
     "interval": 10,
     "entity_action": {
       "type": "origins:change_resource",
-      "resource": ":*_jump_counter",
+      "resource": "*:*_jump_counter",
       "operation": "set",
       "change": 0
     },
