@@ -1,0 +1,20 @@
+{
+  "values": [
+    "#base_stone_overworld",
+    "#dirt",
+    "#sand",
+    "#terracotta",
+    "#coal_ores",
+    "#copper_ores",
+    "#iron_ores",
+    "#gold_ores",
+    "#redstone_ores",
+    "#lapis_ores",
+    "#diamond_ores",
+    "#emerald_ores",
+    "minecraft:gravel",
+    "minecraft:sandstone",
+    "minecraft:red_sandstone",
+    "minecraft:calcite"
+  ]
+}
