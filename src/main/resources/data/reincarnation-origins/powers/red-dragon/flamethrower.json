@@ -13,7 +13,7 @@
         "actions": [
           {
             "type": "origins:execute_command",
-            "command": "data merge block ~ ~ ~ {BurnTime:6400}"
+            "command": "data merge block ~ ~ ~ {BurnTime:1600}"
           },
           {
             "type": "origins:execute_command",
