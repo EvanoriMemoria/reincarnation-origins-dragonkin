@@ -34,6 +34,7 @@
   "fuel_regen_no_sky": {
     "_comment": "Generate fuel while not under the sky, and with enough stone blocks in range",
     "type": "origins:action_over_time",
+    "interval": 10,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_fuelbar",
@@ -56,9 +57,13 @@
           "shape": "cube",
           "comparison": ">=",
           "compare_to": 5
+        },
+        {
+          "type": "origins:power_active",
+          "power": "reincarnation-origins:brown-dragon/swim_toggle",
+          "inverted": true
         }
       ]
-    },
-    "interval": 10
+    }
   }
 }

@@ -36,7 +36,20 @@
   "exhaustion": {
     "type": "origins:exhaust",
     "interval": 20,
-    "exhaustion": 1.2,
+    "exhaustion": 0.7,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "reincarnation-origins:brown-dragon/swim_toggle"
+    }
+  },
+  "magic_drain": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "reincarnation-origins:brown-dragon/fuel_fuelbar",
+      "change": -1
+    },
     "condition": {
       "type": "origins:power_active",
       "power": "reincarnation-origins:brown-dragon/swim_toggle"
