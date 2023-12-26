@@ -1,17 +1,59 @@
 {
   "type": "origins:multiple",
-  "more_breath": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:gain_air",
-      "value": 5
-    },
-    "interval": 10,
+  "hidden": true,
+  "fall_25": {
+    "type": "origins:modify_falling",
+    "velocity": 0.6,
+    "take_fall_damage": true,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "reincarnation-origins:dragonkin/white_transformation_bar",
+          "comparison": ">=",
+          "compare_to": 25
+        },
+        {
+          "type": "origins:resource",
+          "resource": "reincarnation-origins:dragonkin/white_transformation_bar",
+          "comparison": "<",
+          "compare_to": 50
+        }
+      ]
+    }
+  },
+  "fall_50": {
+    "type": "origins:modify_falling",
+    "velocity": 0.4,
+    "take_fall_damage": true,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "reincarnation-origins:dragonkin/white_transformation_bar",
+          "comparison": ">=",
+          "compare_to": 50
+        },
+        {
+          "type": "origins:resource",
+          "resource": "reincarnation-origins:dragonkin/white_transformation_bar",
+          "comparison": "<",
+          "compare_to": 75
+        }
+      ]
+    }
+  },
+  "fall_75": {
+    "type": "origins:modify_falling",
+    "velocity": 0.2,
+    "take_fall_damage": true,
     "condition": {
       "type": "origins:resource",
       "resource": "reincarnation-origins:dragonkin/white_transformation_bar",
       "comparison": ">=",
-      "compare_to": 50
+      "compare_to": 75
     }
   }
 }

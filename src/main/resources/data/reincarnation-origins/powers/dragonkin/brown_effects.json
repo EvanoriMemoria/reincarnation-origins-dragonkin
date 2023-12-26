@@ -1,5 +1,6 @@
 {
   "type": "origins:multiple",
+  "hidden": true,
   "15_night_vision": {
     "type": "origins:night_vision",
     "strength": 0.15,

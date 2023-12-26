@@ -1,5 +1,6 @@
 {
   "type": "origins:multiple",
+  "hidden": true,
   "25_fire_damage": {
     "type": "origins:modify_damage_taken",
     "modifier": {

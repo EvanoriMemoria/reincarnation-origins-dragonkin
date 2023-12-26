@@ -1,5 +1,6 @@
 {
   "type": "origins:multiple",
+  "hidden": true,
   "more_breath": {
     "type": "origins:action_over_time",
     "interval": 10,
