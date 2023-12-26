@@ -2,20 +2,10 @@
   "type": "origins:multiple",
   "lose_stamina": {
     "type": "origins:action_over_time",
-    "interval": 20,
+    "interval": 40,
     "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:exhaust",
-          "amount": 0.4
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "reincarnation-origins:blue-dragon/fuel_fuelbar",
-          "change": -2
-        }
-      ]
+      "type": "origins:exhaust",
+      "amount": 0.4
     },
     "condition": {
       "type": "origins:and",
