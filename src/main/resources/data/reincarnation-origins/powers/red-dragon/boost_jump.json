@@ -75,6 +75,26 @@
       "type": "origins:on_block"
     }
   },
+  "fly_delay": {
+    "_comment": "adds to jump_counter shortly after the last jump is used to prevent flight activating on the last jump",
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:delay",
+      "ticks": 5,
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_jump_counter",
+        "change": 1
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_jump_counter",
+      "comparison": "==",
+      "compare_to": 2
+    }
+  },
   "jump_then_fly": {
     "_comment": "prevent flight until jumps have been used",
     "type": "origins:prevent_elytra_flight",
