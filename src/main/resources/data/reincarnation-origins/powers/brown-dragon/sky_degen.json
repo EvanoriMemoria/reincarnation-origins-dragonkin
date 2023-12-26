@@ -1,12 +1,12 @@
 {
   "_comment": "Lose fuel while under the sky",
   "type": "origins:action_over_time",
+  "interval": 40,
   "entity_action": {
     "type": "origins:change_resource",
     "resource": "reincarnation-origins:brown-dragon/fuel_fuelbar",
-    "change": -2
+    "change": -1
   },
-  "interval": 10,
   "condition": {
     "type": "origins:exposed_to_sky"
   }
