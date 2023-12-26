@@ -3,7 +3,7 @@
   "hidden": true,
   "fall_25": {
     "type": "origins:modify_falling",
-    "velocity": 0.6,
+    "velocity": 0.06,
     "take_fall_damage": true,
     "condition": {
       "type": "origins:and",
@@ -25,7 +25,7 @@
   },
   "fall_50": {
     "type": "origins:modify_falling",
-    "velocity": 0.4,
+    "velocity": 0.04,
     "take_fall_damage": true,
     "condition": {
       "type": "origins:and",
@@ -47,7 +47,7 @@
   },
   "fall_75": {
     "type": "origins:modify_falling",
-    "velocity": 0.2,
+    "velocity": 0.02,
     "take_fall_damage": true,
     "condition": {
       "type": "origins:resource",
